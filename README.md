@@ -19,7 +19,10 @@
          -> un agencement en array de speakers ultrasoniques qui deviennent audibles au contact d'un objet
          
          -> deux agencements en array de speakers ultrasoniques qiu deviennent audible par l'interférence que chacune produit l'une par rapport à l'autre
-         
+
+## Objectif prochaine scéance : 
++ comprendre comment une onde modulée se démodule au conctacte d'un solide.
+
 ### Sources :
 + Explication vulgarisée de comment celà marche : DIY Ultrasonic Audio Laser (Directional Speaker) > https://www.youtube.com/watch?v=9hD5FPVSsV0
 + https://www.explainthatstuff.com/directional-loudspeakers.html
