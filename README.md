@@ -16,7 +16,7 @@
      * propagation des ondes unidirectionelles dans un milieu 1D.
      * propagation d'ondes ultrasoniques 
 
-         -> un agencement en array de speakers ultrasoniques qui deviennent audibles au contact d'un objet
+         -> un agencement en array de speakers ultrasoniques qui deviennent audibles au contact d'un objet\n
          -> deux agencements en array de speakers ultrasoniques qiu deviennent audible par l'interférence que chacune produit l'une par rapport à l'autre
          
 ### Sources :
