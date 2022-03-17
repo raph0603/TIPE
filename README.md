@@ -25,4 +25,5 @@
 + https://www.explainthatstuff.com/directional-loudspeakers.html
 + Modulation des ondes : http://geii.en.free.fr/MA1.pdf
 + http://thierry.col2.free.fr/restreint/exovideo_lycee/resum_spe/ch5_produire_son_communiquer.htm
-![https://www.mdpi.com/sensors/sensors-20-02148/article_deploy/html/images/sensors-20-02148-g001.png]
+<img src="https://www.mdpi.com/sensors/sensors-20-02148/article_deploy/html/images/sensors-20-02148-g001.png">
+
