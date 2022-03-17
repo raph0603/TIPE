@@ -20,3 +20,4 @@
          -> deux agencements en array de speakers ultrasoniques qiu deviennent audible par l'interférence que chacune produit l'une par rapport à l'autre
          
 ### Sources :
++ Explication vulgarisée de comment celà marche : DIY Ultrasonic Audio Laser (Directional Speaker) > https://www.youtube.com/watch?v=9hD5FPVSsV0
