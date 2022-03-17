@@ -23,3 +23,4 @@
 ### Sources :
 + Explication vulgarisée de comment celà marche : DIY Ultrasonic Audio Laser (Directional Speaker) > https://www.youtube.com/watch?v=9hD5FPVSsV0
 + https://www.explainthatstuff.com/directional-loudspeakers.html
++ Modulation des ondes : http://geii.en.free.fr/MA1.pdf
