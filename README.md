@@ -21,7 +21,7 @@
          -> deux agencements en array de speakers ultrasoniques qiu deviennent audible par l'interférence que chacune produit l'une par rapport à l'autre
 
 ## Objectif prochaine scéance : 
-+ Etudier la modulation et la démodulation d'un signal su un aspect électronique.
++ Etudier la modulation et la démodulation d'un signal d'un point de vue électronique.
 
 ### Sources :
 + Explication vulgarisée de comment celà marche : DIY Ultrasonic Audio Laser (Directional Speaker) > https://www.youtube.com/watch?v=9hD5FPVSsV0
