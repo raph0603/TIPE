@@ -37,3 +37,4 @@
 ### Sources :
 + https://www.techniques-ingenieur.fr/actualite/articles/lenceinte-qui-plonge-louie-dans-la-realite-augmentee-32796/
 + https://worldwide.espacenet.com/patent/search/family/067262352/publication/FR3087608A1?q=akoustic%20arts
+  (relevé d'information dans le fichier joint au répertoire)
