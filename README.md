@@ -23,7 +23,7 @@
 ## Objectif prochaine scéance : 
 + Etudier la modulation et la démodulation d'un signal d'un point de vue électronique.
 
-### Sources :
+### liens :
 + Explication vulgarisée de comment celà marche : DIY Ultrasonic Audio Laser (Directional Speaker) > https://www.youtube.com/watch?v=9hD5FPVSsV0
 + https://www.explainthatstuff.com/directional-loudspeakers.html
 + Modulation des ondes : http://geii.en.free.fr/MA1.pdf
@@ -33,3 +33,7 @@
 
 ### Modulation :
 + http://htmlpreview.github.io/?https://github.com/raph0603/TIPE/blob/main/modulation/modulation.html
+
+### Sources :
++ https://www.techniques-ingenieur.fr/actualite/articles/lenceinte-qui-plonge-louie-dans-la-realite-augmentee-32796/
++ https://worldwide.espacenet.com/patent/search/family/067262352/publication/FR3087608A1?q=akoustic%20arts
