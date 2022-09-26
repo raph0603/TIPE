@@ -1,4 +1,4 @@
-# TIPE
+# Ancien TIPE
 
 ## Idée :
 
