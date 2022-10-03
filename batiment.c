@@ -4,15 +4,15 @@ struct batiment
 {
 	int id;
 	int habitants;
-	double puissance;
+	double consommation;
 };
 typedef struct batiment bat;
 
-bat bat_create(int id, double puissance, int habitants){
+bat bat_create(int id){
 	bat b = malloc(sizeof(bat));
 	b->id = id;
-	b->habitants = habitants;
-	b->puissance = puissance;
+	b->habitants = 0;
+	b->consommation = 0;
 	return b; 
 }
 
