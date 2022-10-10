@@ -1,9 +1,12 @@
 // Langage : C
 // Path: batiment.c
 
+#include <time.h>
 #include <stdbool.h> 
 #include <stdlib.h>
 #include <stdio.h>
+
+
 
 typedef struct batiment batiment;
 struct batiment
@@ -51,15 +54,16 @@ void batiment_print(batiment *b)
 
 int main(int argc, char const *argv[])
 {
+	srand(time(NULL));
 	batiment* b[10];
 	for (int i = 0; i < 10; i++)
 	{
-		b[i] = batiment_new(i, i * 10);
+		b[i] = batiment_new(i, rand() % 100);
 	}
 	// Initialise des valeurs au hasard
 	for (int i = 0; i < 10; i++)
 	{
-		batiment_set_etat(b[i], rand() % 2);
+		batiment_set_etat(b[i], true);
 		batiment_print(b[i]);
 	}
 	return 0;
