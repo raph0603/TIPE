@@ -3,13 +3,13 @@
 
 #include <stdbool.h> 
 
+typedef struct batiment batiment;
 struct batiment
 {
 	int id;
 	double consommation;
 	bool etat;
 };
-typedef struct batiment batiment;
 
 batiment *batiment_new(int id, double consommation)
 {

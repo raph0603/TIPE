@@ -1,12 +1,15 @@
-#include "ville.c"
+// Langage : C
+// Path: ville.c
 
+#include <stdbool.h>
+#include <stdlib.h>
+#include "section.c"
+
+typedef struct univers univers;
 struct univers
 {
-    int habitants;
-    int batiments;
-    int sections;
-    int villes;
+    int id;
     double consommation;
-    ville* ville;
-}
-
+    bool etat;
+    section **sections;
+};

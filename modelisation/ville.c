@@ -3,8 +3,9 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-#include "section.h"
+#include "section.c"
 
+typedef struct ville ville;
 struct ville
 {
 	int id;
@@ -13,7 +14,6 @@ struct ville
 	section **sections;
 };
 
-typedef struct ville ville;
 
 ville *ville_new(int id)
 {
