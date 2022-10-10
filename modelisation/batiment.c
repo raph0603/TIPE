@@ -2,6 +2,8 @@
 // Path: batiment.c
 
 #include <stdbool.h> 
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct batiment batiment;
 struct batiment
@@ -40,12 +42,25 @@ double batiment_get_consommation(batiment *b)
 	return b->consommation;
 }
 
-int batiment_get_id(batiment *b)
-{
-	return b->id;
-}
-
 void batiment_print(batiment *b)
 {
-	printf("Batiment %d : %f %s \r ", b->id, b->consommation, b->etat ? "ON" : "OFF");
+	printf("Batiment %d : %lf %s \n ", b->id, b->consommation, b->etat ? "ON" : "OFF");
+}
+
+// Example of use, batiments:
+
+int main(int argc, char const *argv[])
+{
+	batiment* b[10];
+	for (int i = 0; i < 10; i++)
+	{
+		b[i] = batiment_new(i, i * 10);
+	}
+	// Initialise des valeurs au hasard
+	for (int i = 0; i < 10; i++)
+	{
+		batiment_set_etat(b[i], rand() % 2);
+		batiment_print(b[i]);
+	}
+	return 0;
 }
