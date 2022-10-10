@@ -52,7 +52,7 @@ int section_get_id(section *s)
 
 void section_print(section *s)
 {
-	printf("Section %d : %f %s \r ", s->id, s->consommation, s->etat ? "ON" : "OFF");
+	printf("Section %d : %f %s \n ", s->id, s->consommation, s->etat ? "ON" : "OFF");
 }
 
 void section_add_batiment(section *s, batiment *b)
@@ -81,3 +81,28 @@ void section_print_batiments(section *s)
 		batiment_print(s->batiments[i]);
 	}
 }
+
+// Example of use:
+
+// int main(int argc, char const *argv[])
+// {
+// 	section *s = section_new(0);
+// 	section_add_batiment(s, batiment_new(0, 10));
+// 	section_add_batiment(s, batiment_new(1, 20));
+// 	section_add_batiment(s, batiment_new(2, 30));
+// 	section_add_batiment(s, batiment_new(3, 40));
+// 	section_add_batiment(s, batiment_new(4, 50));
+// 	section_add_batiment(s, batiment_new(5, 60));
+// 	section_add_batiment(s, batiment_new(6, 70));
+// 	section_add_batiment(s, batiment_new(7, 80));
+// 	section_add_batiment(s, batiment_new(8, 90));
+// 	section_add_batiment(s, batiment_new(9, 100));
+// 	section_print_batiments(s);
+// 	section_update_consommation(s);
+// 	section_print(s);
+// 	section_set_etat(s, false);
+// 	section_update_consommation(s);
+// 	section_print(s);
+// 	section_free(s);
+// 	return 0;
+// }

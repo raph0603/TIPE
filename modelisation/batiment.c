@@ -52,19 +52,19 @@ void batiment_print(batiment *b)
 
 // Example of use, batiments:
 
-int main(int argc, char const *argv[])
-{
-	srand(time(NULL));
-	batiment* b[10];
-	for (int i = 0; i < 10; i++)
-	{
-		b[i] = batiment_new(i, rand() % 100);
-	}
-	// Initialise des valeurs au hasard
-	for (int i = 0; i < 10; i++)
-	{
-		batiment_set_etat(b[i], true);
-		batiment_print(b[i]);
-	}
-	return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+// 	srand(time(NULL));
+// 	batiment* b[10];
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		b[i] = batiment_new(i, rand() % 100);
+// 	}
+// 	// Initialise des valeurs au hasard
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		batiment_set_etat(b[i], true);
+// 		batiment_print(b[i]);
+// 	}
+// 	return 0;
+// }

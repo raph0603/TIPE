@@ -143,3 +143,11 @@ void ville_add_batiment_section_batiment(ville *v, batiment *b, int id_section, 
 	section_add_batiment(v->sections[id_section], b);
 }
 
+
+// Example of use:
+
+int main(){
+	ville *v = ville_new(1);
+	ville_print(v);
+	ville_free(v);
+}
