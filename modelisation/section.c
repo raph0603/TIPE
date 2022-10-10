@@ -5,10 +5,13 @@
 #include <stdlib.h>
 #include "batiment.c"
 
+const int MAX_BATIMENTS = 100;
+
 typedef struct section section;
 struct section
 {
 	int id;
+	int batiments_count;
 	double consommation;	
 	bool etat;
 	batiment **batiments;
@@ -19,6 +22,7 @@ section *section_new(int id)
 {
 	section *s = malloc(sizeof(section));
 	s->id = id;
+	s->batiments_count = 0;
 	s->consommation = 0;
 	s->etat = true;
 	s->batiments = NULL;
@@ -27,6 +31,10 @@ section *section_new(int id)
 
 void section_free(section *s)
 {
+	for (int i = 0; i < s->batiments_count; ++i)
+	{
+		batiment_free(s->batiments[i]);
+	}
 	free(s);
 }
 
@@ -52,57 +60,64 @@ int section_get_id(section *s)
 
 void section_print(section *s)
 {
+	printf("Verifying section %d...\n", s->id);
 	printf("Section %d : %f %s \n ", s->id, s->consommation, s->etat ? "ON" : "OFF");
+	printf("\n");
 }
 
 void section_add_batiment(section *s, batiment *b)
 {
-	s->batiments = realloc(s->batiments, sizeof(batiment *) * (s->id + 1));
-	s->batiments[s->id] = b;
-	s->id++;
+	if (s->batiments_count < MAX_BATIMENTS)
+	{
+		s->batiments = realloc(s->batiments, (s->batiments_count + 1) * sizeof(batiment *));
+		s->batiments[s->batiments_count] = b;
+		s->batiments_count++;
+		return 0;
+	}
+	else return 1;
 }
 
-void section_update_consommation(section *s)
+void section_update(section *s)
 {
+	printf("Updating section %d... \n", s->id);
 	s->consommation = 0;
-	for (int i = 0; i < s->id; i++)
+	for (int i = 0; i < s->batiments_count; i++)
 	{
 		if (batiment_get_etat(s->batiments[i]))
 		{
 			s->consommation += batiment_get_consommation(s->batiments[i]);
 		}
 	}
+	printf("\n");
 }
 
 void section_print_batiments(section *s)
 {
-	for (int i = 0; i < s->id; i++)
+	printf("Printing batiments of section %d... \n", s->id);
+	for (int i = 0; i < s->batiments_count; i++)
 	{
 		batiment_print(s->batiments[i]);
 	}
+	printf("\n");
 }
 
 // Example of use:
 
-// int main(int argc, char const *argv[])
-// {
-// 	section *s = section_new(0);
-// 	section_add_batiment(s, batiment_new(0, 10));
-// 	section_add_batiment(s, batiment_new(1, 20));
-// 	section_add_batiment(s, batiment_new(2, 30));
-// 	section_add_batiment(s, batiment_new(3, 40));
-// 	section_add_batiment(s, batiment_new(4, 50));
-// 	section_add_batiment(s, batiment_new(5, 60));
-// 	section_add_batiment(s, batiment_new(6, 70));
-// 	section_add_batiment(s, batiment_new(7, 80));
-// 	section_add_batiment(s, batiment_new(8, 90));
-// 	section_add_batiment(s, batiment_new(9, 100));
-// 	section_print_batiments(s);
-// 	section_update_consommation(s);
-// 	section_print(s);
-// 	section_set_etat(s, false);
-// 	section_update_consommation(s);
-// 	section_print(s);
-// 	section_free(s);
-// 	return 0;
-// }
+int main(int argc, char const *argv[])
+{
+	srand(time(NULL));
+	printf("\n");
+	section *s = section_new(0);
+	for (int i = 0; i < 10; i++)
+	{
+		section_add_batiment(s, batiment_new(i, 0)) ? printf("Error adding batiment %d to section %d, max batiments reached", i, s->id) : (void);
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		batiment_set_consommation_random(s->batiments[i]);
+	}
+	section_print_batiments(s);
+	section_print(s);
+	section_update(s);
+	section_print(s);
+}

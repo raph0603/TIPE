@@ -5,10 +5,13 @@
 #include <stdlib.h>
 #include "section.c"
 
+const int MAX_SECTIONS = 100;
+
 typedef struct ville ville;
 struct ville
 {
 	int id;
+	int sections_count;
 	double consommation;
 	bool etat;
 	section **sections;
@@ -19,6 +22,7 @@ ville *ville_new(int id)
 {
 	ville *v = malloc(sizeof(ville));
 	v->id = id;
+	v->sections_count = 0;
 	v->consommation = 0;
 	v->etat = true;
 	v->sections = NULL;
@@ -27,6 +31,10 @@ ville *ville_new(int id)
 
 void ville_free(ville *v)
 {
+	for (int i = 0; i < v->sections_count; ++i)
+	{
+		section_free(v->sections[i]);
+	}
 	free(v);
 }
 
@@ -57,14 +65,14 @@ void ville_print(ville *v)
 
 void ville_add_section(ville *v, section *s)
 {
-	v->sections = realloc(v->sections, sizeof(section *) * (v->id + 1));
-	v->sections[v->id] = s;
-	v->id++;
+	v->sections = realloc(v->sections, sizeof(section *) * (v->sections_count + 1));
+	v->sections[v->sections_count] = s;
+	v->sections_count++;
 }
 
 void ville_print_sections(ville *v)
 {
-	for (int i = 0; i < v->id; i++)
+	for (int i = 0; i < v->sections_count; i++)
 	{
 		section_print(v->sections[i]);
 	}
@@ -72,7 +80,7 @@ void ville_print_sections(ville *v)
 
 void ville_print_batiments(ville *v)
 {
-	for (int i = 0; i < v->id; i++)
+	for (int i = 0; i < v->sections_count; i++)
 	{
 		section_print_batiments(v->sections[i]);
 	}
@@ -80,7 +88,7 @@ void ville_print_batiments(ville *v)
 
 void ville_set_etat_sections(ville *v, bool etat)
 {
-	for (int i = 0; i < v->id; i++)
+	for (int i = 0; i < v->sections_count; i++)
 	{
 		section_set_etat(v->sections[i], etat);
 	}
@@ -88,48 +96,42 @@ void ville_set_etat_sections(ville *v, bool etat)
 
 void ville_set_etat_batiments(ville *v, bool etat)
 {
-	for (int i = 0; i < v->id; i++)
+	for (int i = 0; i < v->sections_count; i++)
 	{
 		section_set_etat_batiments(v->sections[i], etat);
 	}
 }
 
-void ville_set_consommation(ville *v)
+void ville_update(ville *v)
 {
-	double consommation = 0;
-	for (int i = 0; i < v->id; i++)
+	printf("Updating section %d... \n", v->id);
+	v->consommation = 0;
+	for (int i = 0; i < v->sections_count; i++)
 	{
-		consommation += section_get_consommation(v->sections[i]);
+		section_update(v->sections[i]);
+		v->consommation += section_get_consommation(v->sections[i]);
 	}
-	v->consommation = consommation;
-}
-
-void ville_set_consommation_sections(ville *v)
-{
-	for (int i = 0; i < v->id; i++)
-	{
-		section_set_consommation(v->sections[i]);
-	}
-}
-
-void ville_set_consommation_batiments(ville *v)
-{
-	for (int i = 0; i < v->id; i++)
-	{
-		section_set_consommation_batiments(v->sections[i]);
-	}
+	printf("\n");
 }
 
 void ville_add_batiment(ville *v, batiment *b)
 {
-	v->sections = realloc(v->sections, sizeof(batiment *) * (v->id + 1));
-	v->sections[v->id] = b;
-	v->id++;
+	for (int i = 0; i < v->sections_count; i++)
+	{
+		if (v->sections[i]->batiments_count < MAX_BATIMENTS)
+		{
+			section_add_batiment(v->sections[i], b);
+			return;
+		}
+	}
+	v->sections = realloc(v->sections, sizeof(section *) * (v->sections_count + 1));
+	v->sections[v->sections_count] = b;
+	v->sections_count++;
 }
 
-void ville_add_batiment_section(ville *v, batiment *b, int id_section)
+int ville_add_batiment_section(ville *v, batiment *b, int id_section)
 {
-	section_add_batiment(v->sections[id_section], b);
+	return section_add_batiment(v->sections[id_section], b);
 }
 
 void ville_add_section_batiment(ville *v, section *s, int id_batiment)
