@@ -22,4 +22,7 @@ Une smart grid est un réseau électrique intelligent. Il est composé de plusie
 - Étude des différents types de distribution
 - Étude des différents types de gestion
 
+- Modélisation d'une structure de smart grid
+- Modélisation d'un réseau de smart grid
+
 ## Résultats :
