@@ -159,22 +159,22 @@ void ville_set_consommation_random(ville *v)
 
 // Example of use:
 
-int main(){
-	srand(time(NULL));
-	printf("\n");
-	ville *v = ville_new(0);
-	for (int i = 0; i < 3; i++)
-	{
-		ville_add_section(v, section_new(i)) ? printf("Error adding batiment %d to section %d, max batiments reached\n", i, v->id) : printf("Batiment %d added to section %d \n", i, v->id);
-		for (int j = 0; j < 120; j++)
-		{
-			section_add_batiment(v->sections[i], batiment_new(j, 0)) ? printf("Error adding batiment %d to section %d, max batiments reached\n", j, i) : printf("Batiment %d added to section %d \n", j, i);
-		}
-	}
-	ville_set_consommation_random(v);
-	ville_print_sections(v);
-	ville_print(v);
-	ville_update(v);
-	ville_print_sections(v);
-	ville_print(v);
-}
+// int main(){
+// 	srand(time(NULL));
+// 	printf("\n");
+// 	ville *v = ville_new(0);
+// 	for (int i = 0; i < 3; i++)
+// 	{
+// 		ville_add_section(v, section_new(i)) ? printf("Error adding section %d to ville %d, max batiments reached\n", i, v->id) : printf("Section %d added to ville %d \n", i, v->id);
+// 		for (int j = 0; j < 120; j++)
+// 		{
+// 			section_add_batiment(v->sections[i], batiment_new(j, 0)) ? printf("Error adding batiment %d to section %d, max batiments reached\n", j, i) : printf("Batiment %d added to section %d \n", j, i);
+// 		}
+// 	}
+// 	ville_set_consommation_random(v);
+// 	ville_print_sections(v);
+// 	ville_print(v);
+// 	ville_update(v);
+// 	ville_print_sections(v);
+// 	ville_print(v);
+// }
