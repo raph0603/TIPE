@@ -52,25 +52,25 @@ void batiment_print(batiment *b)
 
 void batiment_set_consommation_random(batiment *b)
 {
-	b->consommation = rand() % 100;
+	b->consommation = rand() / rand();
 }
 
 // Example of use, batiments:
 
-int main(int argc, char const *argv[])
-{
-	srand(time(NULL));
-	batiment* b[10];
-	for (int i = 0; i < 10; i++)
-	{
-		b[i] = batiment_new(i, 0);
-		batiment_set_consommation_random(b[i]);
-	}
-	// Initialise des valeurs au hasard
-	for (int i = 0; i < 10; i++)
-	{
-		batiment_set_etat(b[i], true);
-		batiment_print(b[i]);
-	}
-	return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+// 	srand(time(NULL));
+// 	batiment* b[10];
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		b[i] = batiment_new(i, 0);
+// 		batiment_set_consommation_random(b[i]);
+// 	}
+// 	// Initialise des valeurs au hasard
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		batiment_set_etat(b[i], true);
+// 		batiment_print(b[i]);
+// 	}
+// 	return 0;
+// }

@@ -65,11 +65,12 @@ void section_print(section *s)
 	printf("\n");
 }
 
-void section_add_batiment(section *s, batiment *b)
+int section_add_batiment(section *s, batiment *b)
 {
 	if (s->batiments_count < MAX_BATIMENTS)
 	{
 		s->batiments = realloc(s->batiments, (s->batiments_count + 1) * sizeof(batiment *));
+		b->id = s->batiments_count;
 		s->batiments[s->batiments_count] = b;
 		s->batiments_count++;
 		return 0;
@@ -101,23 +102,28 @@ void section_print_batiments(section *s)
 	printf("\n");
 }
 
-// Example of use:
-
-int main(int argc, char const *argv[])
+void section_set_consommation_random(section *s)
 {
-	srand(time(NULL));
-	printf("\n");
-	section *s = section_new(0);
-	for (int i = 0; i < 10; i++)
-	{
-		section_add_batiment(s, batiment_new(i, 0)) ? printf("Error adding batiment %d to section %d, max batiments reached", i, s->id) : (void);
-	}
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < s->batiments_count; i++)
 	{
 		batiment_set_consommation_random(s->batiments[i]);
 	}
-	section_print_batiments(s);
-	section_print(s);
-	section_update(s);
-	section_print(s);
 }
+
+// Example of use:
+
+// int main(int argc, char const *argv[])
+// {
+// 	srand(time(NULL));
+// 	printf("\n");
+// 	section *s = section_new(0);
+// 	for (int i = 0; i < 120; i++)
+// 	{
+// 		section_add_batiment(s, batiment_new(i, 0)) ? printf("Error adding batiment %d to section %d, max batiments reached\n", i, s->id) : printf("Batiment %d added to section %d \n", i, s->id);
+// 	}
+// 	section_set_consommation_random(s);
+// 	section_print_batiments(s);
+// 	section_print(s);
+// 	section_update(s);
+// 	section_print(s);
+// }

@@ -60,30 +60,44 @@ int ville_get_id(ville *v)
 
 void ville_print(ville *v)
 {
-	printf("Ville %d : %f %s \r ", v->id, v->consommation, v->etat ? "ON" : "OFF");
+	printf("Verifying ville %d...\n", v->id);
+	printf("Ville %d : %f %s \n ", v->id, v->consommation, v->etat ? "ON" : "OFF");
+	printf("\n");
 }
 
-void ville_add_section(ville *v, section *s)
+int ville_add_section(ville *v, section *s)
 {
-	v->sections = realloc(v->sections, sizeof(section *) * (v->sections_count + 1));
-	v->sections[v->sections_count] = s;
-	v->sections_count++;
+	if (v->sections_count < MAX_SECTIONS)
+	{
+		v->sections = realloc(v->sections, (v->sections_count + 1) * sizeof(section *));
+		v->sections[v->sections_count] = s;
+		v->sections_count++;
+		return 0;
+	}
+	else return 1;
 }
 
 void ville_print_sections(ville *v)
 {
+	printf("Printing batiments of section %d... \n", v->id);
 	for (int i = 0; i < v->sections_count; i++)
 	{
 		section_print(v->sections[i]);
 	}
+	printf("\n");
 }
 
 void ville_print_batiments(ville *v)
 {
+	printf("Printing batiments of section %d... \n", v->id);
 	for (int i = 0; i < v->sections_count; i++)
 	{
-		section_print_batiments(v->sections[i]);
+		for (int j = 0; j < v->sections[i]->batiments_count; j++)
+		{
+			batiment_print(v->sections[i]->batiments[j]);
+		}
 	}
+	printf("\n");
 }
 
 void ville_set_etat_sections(ville *v, bool etat)
@@ -94,17 +108,9 @@ void ville_set_etat_sections(ville *v, bool etat)
 	}
 }
 
-void ville_set_etat_batiments(ville *v, bool etat)
-{
-	for (int i = 0; i < v->sections_count; i++)
-	{
-		section_set_etat_batiments(v->sections[i], etat);
-	}
-}
-
 void ville_update(ville *v)
 {
-	printf("Updating section %d... \n", v->id);
+	printf("Updating ville %d... \n", v->id);
 	v->consommation = 0;
 	for (int i = 0; i < v->sections_count; i++)
 	{
@@ -112,6 +118,11 @@ void ville_update(ville *v)
 		v->consommation += section_get_consommation(v->sections[i]);
 	}
 	printf("\n");
+}
+
+void section_of_ville_add_batiment(ville *v, int id_section, batiment *b)
+{
+	section_add_batiment(v->sections[id_section], b) ? printf("Error adding batiment to section %d of ville %d \n", id_section, v->id) : printf("Batiment added to section %d of ville %d \n", id_section, v->id);
 }
 
 void ville_add_batiment(ville *v, batiment *b)
@@ -125,7 +136,8 @@ void ville_add_batiment(ville *v, batiment *b)
 		}
 	}
 	v->sections = realloc(v->sections, sizeof(section *) * (v->sections_count + 1));
-	v->sections[v->sections_count] = b;
+	v->sections[v->sections_count] = section_new(v->sections_count);
+	section_of_ville_add_batiment(v, v->sections_count, b);
 	v->sections_count++;
 }
 
@@ -134,22 +146,35 @@ int ville_add_batiment_section(ville *v, batiment *b, int id_section)
 	return section_add_batiment(v->sections[id_section], b);
 }
 
-void ville_add_section_batiment(ville *v, section *s, int id_batiment)
+void ville_set_consommation_random(ville *v)
 {
-	batiment_add_section(v->sections[id_batiment], s);
-}
-
-void ville_add_batiment_section_batiment(ville *v, batiment *b, int id_section, int id_batiment)
-{
-	batiment_add_section(v->sections[id_batiment], s);
-	section_add_batiment(v->sections[id_section], b);
+	v->consommation = 0;
+	for (int i = 0; i < v->sections_count; i++)
+	{
+		section_set_consommation_random(v->sections[i]);
+		v->consommation += section_get_consommation(v->sections[i]);
+	}
 }
 
 
 // Example of use:
 
 int main(){
-	ville *v = ville_new(1);
+	srand(time(NULL));
+	printf("\n");
+	ville *v = ville_new(0);
+	for (int i = 0; i < 3; i++)
+	{
+		ville_add_section(v, section_new(i)) ? printf("Error adding batiment %d to section %d, max batiments reached\n", i, v->id) : printf("Batiment %d added to section %d \n", i, v->id);
+		for (int j = 0; j < 120; j++)
+		{
+			section_add_batiment(v->sections[i], batiment_new(j, 0)) ? printf("Error adding batiment %d to section %d, max batiments reached\n", j, i) : printf("Batiment %d added to section %d \n", j, i);
+		}
+	}
+	ville_set_consommation_random(v);
+	ville_print_sections(v);
 	ville_print(v);
-	ville_free(v);
+	ville_update(v);
+	ville_print_sections(v);
+	ville_print(v);
 }
