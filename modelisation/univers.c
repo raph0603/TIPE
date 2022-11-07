@@ -73,7 +73,7 @@ void univers_print_ville(univers *u)
 
 void univers_print(univers *u)
 {
-    printf("Univers : %f\n", u->consommation);
+    printf("Univers : %.2f\n", u->consommation);
 }
 
 int main(int argc, char const *argv[])

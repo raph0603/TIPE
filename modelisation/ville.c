@@ -61,7 +61,7 @@ int ville_get_id(ville *v)
 void ville_print(ville *v)
 {
 	printf("Verifying ville %d...\n", v->id);
-	printf("Ville %d : %f %s \n ", v->id, v->consommation, v->etat ? "ON" : "OFF");
+	printf("Ville %d : %.2f %s \n ", v->id, v->consommation, v->etat ? "ON" : "OFF");
 	printf("\n");
 }
 

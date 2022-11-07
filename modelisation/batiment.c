@@ -6,6 +6,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+double fmod(double x, double y) { // renvoie le reste de la division euclidienne de x par y sous forme de double
+		return x - y * (int)(x / y);
+		return x - y * (int)(x / y);
+	double q = (int)x/(int)y;
+	printf("fmod(%f, %f) = %f\n", x, y, x - y*q);
+	return x - y*q;
+}
 
 
 typedef struct batiment batiment;
@@ -47,12 +54,12 @@ double batiment_get_consommation(batiment *b)
 
 void batiment_print(batiment *b)
 {
-	printf("Batiment %d : %lf %s \n", b->id, b->consommation, b->etat ? "ON" : "OFF");
+	printf("Batiment %d : %.2f %s \n", b->id, b->consommation, b->etat ? "ON" : "OFF");
 }
 
 void batiment_set_consommation_random(batiment *b)
 {
-	b->consommation = rand() / rand();
+	b->consommation = (fmod((double)rand(), (double)8000) + (double)10300)/(double) 100; // consommation: (taille moyenne) 71.4m² * 8 logement par batiments * 6kWh par jours / 24h ~= 143kWh => [103, 183]
 }
 
 // Example of use, batiments:

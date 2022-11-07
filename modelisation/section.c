@@ -61,7 +61,7 @@ int section_get_id(section *s)
 void section_print(section *s)
 {
 	printf("Verifying section %d...\n", s->id);
-	printf("Section %d : %f %s \n ", s->id, s->consommation, s->etat ? "ON" : "OFF");
+	printf("Section %d : %.2f %s \n ", s->id, s->consommation, s->etat ? "ON" : "OFF");
 	printf("\n");
 }
 
