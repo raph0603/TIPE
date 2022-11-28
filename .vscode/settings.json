@@ -29,5 +29,8 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
+  ],
+  "githubPullRequests.ignoredPullRequestBranches": [
+    "main"
   ]
 }
