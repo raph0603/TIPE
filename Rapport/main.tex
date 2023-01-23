@@ -1,0 +1,125 @@
+\documentclass[12pt,a4paper]{article}
+%----------------------------------------------------------------
+% DÉBUT DE L'ENTÊTE
+% À IGNORER EN PREMIÈRE LECTURE
+%----------------------------------------------------------------
+\usepackage{url}            % Pour citer les adresses web
+\usepackage[T1]{fontenc}    % Encodage des accents
+\usepackage[utf8]{inputenc} % Lui aussi
+\usepackage[french]{babel} % Pour la traduction française
+\usepackage{amsmath}        % La base pour les maths
+\usepackage{mathrsfs}       % Quelques symboles supplémentaires
+\usepackage{amssymb}        % encore des symboles.
+\usepackage{amsfonts}       % Des fontes, eg pour \mathbb.
+
+\usepackage[svgnames]{xcolor} % De la couleur
+\usepackage{geometry}       % Gérer correctement la taille
+
+
+
+\newcounter{nextyear}
+\setcounter{nextyear}{\the\year}
+\addtocounter{nextyear}{1}
+
+% Mettez votre titre de TIPE et votre nom ci-après
+\title{Titre de mon TIPE}
+\author{F. Serier, MP\oldstylenums{1}-MPi, \oldstylenums{\the\year}-\oldstylenums{\arabic{nextyear}} }
+%% À décommenter si vous ne voulez pas que la date apparaisse explicitement
+%\date{}
+
+% Un raccourci pour composer les unités correctement (en droit)
+% Exemple: $v = 10\U{m.s^{-1}}$
+\newcommand{\U}[1]{~\mathrm{#1}}
+
+% Pour discuter avec le prof dans le document: le premier argument est 
+% le nom de celui qui fait la remarque et le second la remarque 
+% proprement dite: \question{jj}{Que voulez-vous dire par là ?}
+% \reponse{Droopy}{I'm very happy...}
+\usepackage{todonotes}
+\newcommand{\question}[2]{\todo[inline,author=#1]{#2}}
+\newcommand{\reponse}[2]{\todo[inline,color=green,author=#1]{#2}}
+
+% Les guillemets \ofg{par exemple}
+\newcommand{\ofg}[1]{\og{}#1\fg{}}
+% Le d des dérivées doit être droit: \frac{\dd x}{\dd t}
+\newcommand{\dd}{\text{d}}
+
+
+
+% NB: le script TeXcount permet de compter les mots utilisés dans chaque section d'un document LaTeX. Vous en trouverez une version en ligne à l'adresse
+% http://app.uio.no/ifi/texcount/online.php
+% Il suffit d'y copier l'ensemble du présent document (via Ctrl-A/Ctrl-C puis Ctrl-V dans la fenêtre idoine) pour obtenir le récapitulatif tout en bas de la page qui s'ouvre alors.
+
+% Pour récupérer les bonnes entrées bibliographiques, je vous conseille l'usage de scholar.google.fr pour les recherches
+% et la récupération des entrée BibTeX comme décrit dans cette vidéo: https://www.youtube.com/watch?v=X-9T2Oaj-5A
+
+\newcommand{\positionnementThematique}[1]{
+\section*{Positionnement thématique}
+{\it #1}}
+
+\newcommand{\motclefs}[2]{
+    \section*{Mots-clefs}
+        \begin{description}
+            \item[Mots-clefs] -- #1 
+            \item[Keywords]   -- #2
+        \end{description}
+}
+\setlength {\marginparwidth }{2cm}
+%-----------------------------------------------------------------------------
+% FIN DE L'ENTÊTE
+%-----------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+%--------------------------------------------------
+\section*{Motivations pour le choix du sujet (50 mots)}
+%--------------------------------------------------
+Bla bla bla
+%--------------------------------------------------
+\section*{Ancrage du sujet au thème de l'année (50 mots)}
+%--------------------------------------------------
+Bla bla bli
+%--------------------------------------------------
+\positionnementThematique{Physique théorique, Astrophysique, Informatique}
+%--------------------------------------------------
+\motclefs{Gravitation -- Relativité -- Mercure -- Périhélie -- Avance}{Gravitation -- Relativity -- Mercury -- Perihelion -- Advance}
+%--------------------------------------------------
+\section*{Bibliographie commentée (650 mots maximum)}
+%--------------------------------------------------
+% D'après TeXcount, la section fait 366 mots: 
+% 366+3+0 (1/0/4/0)
+
+Le problème de l'avance du périhélie de Mercure s'est rapidement 
+          posé après que Newton ait posé la loi de la gravitation universelle en $1/r^2$. En fait, les observations s'accordaient tellement bien à ses prédictions théoriques (de plus en plus étoffées à mesure du temps) qu'elle ne pouvait être fausse. Mais les observations, de plus en plus précises elles aussi, montrèrent que la trajectoire de Mercure n'était pas une ellipse fermée comme le prédisait la mécanique classique mais une trajectoire, elliptique en première approximation, dont la direction du périhélie (point de passage au plus proche du Soleil) tournait au cours du temps.
+
+
+Cette avance s'élevait à $574$ secondes d'arc par siècle mais la théorie newtonienne (s'aidant des perturbations induites par les autres planètes sur la trajectoire de Mercure) ne permettait d'en expliquer \ofg{que}  $531$ secondes par siècle. Restent donc les \ofg{fameuses} $43$ secondes d'arc par siècle d'avance que seule la théorie de la relativité générale pu correctement prédire \cite{einstein1916grundlage}.
+
+Fort de son succès de la découverte de Neptune via les perturbations de l'orbite d'Uranus \cite{leVerrier1846}, l'astronome Urbain Le Verrier proposa en \oldstylenums{1859} \cite{leVerrier1859theorie,WikiMercure} l'existence d'une planète d'orbite intramercurielle (qu'il prénomma \ofg{Vulcain}) dont les perturbations gravitationnelles seraient à même d'expliquer les 43 secondes manquantes. Malheureusement, malgré de nombreuses observations, cette planète ne pu jamais être mise en évidence.
+
+Les tentatives précédentes n'ayant pas porté leurs fruits, on chercha donc à développer d'autres explications ou théories pouvant rendre compte de cette avance de 43 secondes. C'est ainsi que Paul Gerber \cite{gerber1898raumliche} postula que l'influx gravitationnel n'était pas instantané comme l'affirmait Newton, mais se propageait à une vitesse finie, celle de la lumière dans le vide, tout comme les ondes électromagnétiques. En développant les implications de sa théorie, il arriva à la même formule théorique qu'Einstein obtiendra quelques années plus tard avec la relativité générale. Malheureusement pour lui, ses travaux ne furent pas reconnus et il s'avéra par la suite qu'il avait obtenu la bonne formule par hasard après plusieurs erreurs de raisonnement.
+
+La théorie de la relativité restreinte \cite{MPEinsteinSpecialRelativity} proposée par Einstein \cite{einstein1905erzeugung} induit elle aussi une précession du périhélie, mais de seulement 6 secondes d'angle par siècle, insuffisante pour expliquer l'ensemble des observations. Ce n'est qu'avec la théorie de la relativité générale \cite{einstein1916grundlage} que les 43 secondes d'angle manquantes sont expliquées \cite{silberstein1917motion,PlusieursAuteurs}.
+%--------------------------------------------------
+\section*{Problématique retenue (50 mots)}
+%--------------------------------------------------
+ Dans tous les ouvrages de vulgarisation traitant d'un peu de relativité, on cite l'explication du phénomène de précession de Mercure parmi les principaux arguments en faveur de la relativité au début du siècle avec, notamment, la déflexion des rayons lumineux au voisinage d'une forte masse qui fut vérifiée lors de l'éclipse de soleil de 1919 ou le phénomène de décalage spectral vers le rouge. Il m'a semblé intéressant de voir dans quelle mesure la relativité explique les 43 secondes d'arc d'avance par siècle que ne pouvait prévoir Newton.
+%--------------------------------------------------
+\section*{Objectifs du TIPE (100 mots maximum)}
+%--------------------------------------------------
+\begin{enumerate}
+	\item	Modélisation: après quelques rappels théoriques, je montrerai que les principes de la relativité restreinte, d'une part, et de la relativité générale, d'autre part, mènent à des équations qui induisent naturellement une avance du périhélie.
+    
+    \item	Simulation numérique: La résolution des équations précédentes numériquement permet de traiter de l'influence de divers paramètres et notamment expliquer pourquoi ce n'est que pour Mercure que cet effet est effectivement mesurable.
+    
+    \item	Observations: Au vu des faibles valeurs effectivement observées, j'essaierai de montrer à quelle précision doivent s'effectuer les observations pour être capable de mesurer cet effet et prouver que celui-ci ne peut pas être expliqué par de simples incertitudes de mesure.
+\end{enumerate}
+%--------------------------------------------------
+%--------------------------------------------------
+% Pour faire apparaître la bibliographie avec des chiffres, 
+% dans l'ordre d'apparition dans le texte
+\bibliographystyle{unsrt-fr}     % Style de la bibliographie (numérotée dans l'ordre d'apparition du texte)
+\bibliography{biblio} % Nom du fichier .bib à utiliser
+
+
+\end{document}
