@@ -3,22 +3,6 @@
 \def\fonteauteurs{\scshape}\fi
 \makeatother
 
-\bibitem{hughchristensen}
-Nochai \bgroup\fonteauteurs\bgroup Rangsan\egroup\egroup{} et Nochai
-  \bgroup\fonteauteurs\bgroup Titidia\egroup\egroup{} :
-\newblock Arima model for forecasting oil palm price.
-\newblock \emph{In} {\em 2nd IMT-GT Regional Conference On Mathematics,
-  Statistics and Applications, University Sains Malaysia, Penang}, 2006.
-\newblock \url {https://hughchristensen.com/papers/academic_papers/ST03.pdf}.
-
-\bibitem{economyarima}
-Adebiyi. \bgroup\fonteauteurs\bgroup Ayodele\egroup\egroup{}, A. et Adewumi
-  \bgroup\fonteauteurs\bgroup Aderemi\egroup\egroup{}, O. :
-\newblock Stock price prediction using the arima model.
-\newblock \emph{In} {\em UKSim-AMSS 16th International Conference on Computer
-  Modelling and Simulation}, 2014.
-\newblock \url {http://eprints.lmu.edu.ng/2357/1/UKSim2014_IEEE.pdf}.
-
 \bibitem{exporeview}
 Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
 \newblock {\em Journal of forecasting, Exponential Smoothing: The state of the
@@ -33,12 +17,20 @@ Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
 \newblock 1985.
 \newblock \url {https://www.bauer.uh.edu/gardner/Exponential-Smoothing.pdf}.
 
-\bibitem{zambiaeconomy}
-Jere \bgroup\fonteauteurs\bgroup Stanley\egroup\egroup{} et Siyanga
-  \bgroup\fonteauteurs\bgroup Mubita\egroup\egroup{} :
-\newblock Forecasting inflation rate of zambia using holt’s exponential
-  smoothing.
-\newblock {\em Journal of Statistics}, 6(2), 2016.
-\newblock \url {https://www.scirp.org/pdf/_2016042714193220.pdf}.
+\bibitem{hughchristensen}
+Nochai \bgroup\fonteauteurs\bgroup Rangsan\egroup\egroup{} et Nochai
+  \bgroup\fonteauteurs\bgroup Titidia\egroup\egroup{} :
+\newblock Arima model for forecasting oil palm price.
+\newblock \emph{In} {\em 2nd IMT-GT Regional Conference On Mathematics,
+  Statistics and Applications, University Sains Malaysia, Penang}, 2006.
+\newblock \url {https://hughchristensen.com/papers/academic_papers/ST03.pdf}.
+
+\bibitem{economyARIMA}
+Adebiyi. \bgroup\fonteauteurs\bgroup Ayodele\egroup\egroup{}, A. et Adewumi
+  \bgroup\fonteauteurs\bgroup Aderemi\egroup\egroup{}, O. :
+\newblock Stock price prediction using the arima model.
+\newblock \emph{In} {\em UKSim-AMSS 16th International Conference on Computer
+  Modelling and Simulation}, 2014.
+\newblock \url {http://eprints.lmu.edu.ng/2357/1/UKSim2014_IEEE.pdf}.
 
 \end{thebibliography}
