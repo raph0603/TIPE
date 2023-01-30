@@ -8,6 +8,8 @@ Eva \bgroup\fonteauteurs\bgroup Ostertagová\egroup\egroup{} :
 \newblock {\em Modelling using Polynomial Regression}, volume~48, pages
   500--506.
 \newblock Elsevier, 2012.
+\newblock \url
+  {https://www.sciencedirect.com/science/article/pii/S1877705812046085/pdfft?isDTMRedir=true&download=true}.
 
 \bibitem{exporeview}
 Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
@@ -28,6 +30,8 @@ Elias \bgroup\fonteauteurs\bgroup Masry\egroup\egroup{} :
 \newblock {\em Multivariate regression estimation Local polynomial fitting for
   time series}, pages 81--101.
 \newblock Elsevier, 1996.
+\newblock \url
+  {https://www.sciencedirect.com/science/article/pii/S0304414996000956/pdfft?isDTMRedir=true&download=true}.
 
 \bibitem{zambiaES}
 Jere \bgroup\fonteauteurs\bgroup Stanley\egroup\egroup{} et Siyanga
@@ -68,6 +72,7 @@ Lacasa \bgroup\fonteauteurs\bgroup Lucas\egroup\egroup{} et Nunez
   \bgroup\fonteauteurs\bgroup Angel\egroup\egroup{} :
 \newblock Time series irreversibility: a visibility graph approach.
 \newblock {\em The European Physical Journal B}, 85(217), 2012.
+\newblock \url {https://arxiv.org/pdf/1108.1691.pdf}.
 
 \bibitem{visigraphPNAS}
 Lacasa \bgroup\fonteauteurs\bgroup Lucas\egroup\egroup{} et Bartolo

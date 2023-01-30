@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.1.28)  31 JAN 2023 00:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.1.28)  31 JAN 2023 00:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,34 +636,58 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./main.bbl
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-6.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-Underfull \hbox (badness 1527) in paragraph at lines 19--25
+Underfull \hbox (badness 10000) in paragraph at lines 7--13
+\T1/cmtt/m/n/12 article / pii / S1877705812046085 / pdfft ? isDTMRedir = true &
+ download =
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 21--27
 []\T1/cmr/m/n/12 Jenkins \T1/cmr/m/sc/12 Gwy-lim \T1/cmr/m/n/12 et Box \T1/cmr/
 m/sc/12 George \T1/cmr/m/n/12 :  \T1/cmr/m/it/12 Time se-ries ana-ly-sis ; fo-r
 e-cas-
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 19--25
+Underfull \hbox (badness 3098) in paragraph at lines 21--27
 \T1/cmr/m/it/12 ting and control\T1/cmr/m/n/12 .  San-Francisco : Hol-den days,
  1970.  libre ac-
  []
 
 
-Underfull \hbox (badness 4084) in paragraph at lines 19--25
+Underfull \hbox (badness 4084) in paragraph at lines 21--27
 \T1/cmr/m/n/12 cès au livre par ar-chive in-ter-net : $\T1/cmtt/m/n/12 https : 
 / / archive . org / details /
+ []
+
+
+Underfull \hbox (badness 6708) in paragraph at lines 29--35
+[]\T1/cmr/m/n/12 Elias \T1/cmr/m/sc/12 Masry \T1/cmr/m/n/12 :  \T1/cmr/m/it/12 
+Mul-ti-va-riate re-gres-sion es-ti-ma-tion Lo-cal po-ly-no-
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 29--35
+\T1/cmr/m/it/12 mial fit-ting for time se-ries\T1/cmr/m/n/12 , pages 81--101.  
+El-se-vier, 1996.  $\T1/cmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--35
+\T1/cmtt/m/n/12 / / www . sciencedirect . com / science / article / pii / S0304
+414996000956 /
  []
 
 [3]) [4] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  16592 strings out of 476902
  323224 string characters out of 5824255
- 659162 words of memory out of 5000000
+ 659163 words of memory out of 5000000
  37541 multiletter control sequences out of 15000+600000
  484131 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -678,9 +702,9 @@ ppen/ec/ecbx1728.600pk> </home/raph/.texlive2022/texmf-var/fonts/pk/ljfour/jkna
 ppen/ec/tcrm1440.600pk> </home/raph/.texlive2022/texmf-var/fonts/pk/ljfour/jkna
 ppen/ec/ecrm1440.600pk> </home/raph/.texlive2022/texmf-var/fonts/pk/ljfour/jkna
 ppen/ec/ecrm2074.600pk>
-Output written on main.pdf (4 pages, 111140 bytes).
+Output written on main.pdf (4 pages, 113153 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
+ 381 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
