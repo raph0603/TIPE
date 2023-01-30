@@ -5,17 +5,25 @@
 
 \bibitem{exporeview}
 Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
-\newblock {\em Journal of forecasting, Exponential Smoothing: The state of the
-  art}, volume~4.
-\newblock 1985.
+\newblock {\em Exponential Smoothing: The state of the art}, volume~4.
+\newblock Journal of forecasting, 1985.
 \newblock \url {}.
 
-\bibitem{exporeview2}
-Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
-\newblock {\em Journal of forecasting, Exponential Smoothing: The state of the
-  art part II}, volume~4.
-\newblock 1985.
-\newblock \url {https://www.bauer.uh.edu/gardner/Exponential-Smoothing.pdf}.
+\bibitem{boxjenkins}
+Jenkins \bgroup\fonteauteurs\bgroup Gwylim\egroup\egroup{} et Box
+  \bgroup\fonteauteurs\bgroup George\egroup\egroup{} :
+\newblock {\em Time series analysis; forecasting and control}.
+\newblock San-Francisco : Holden days, 1970.
+\newblock libre accès au livre par archive internet: \url
+  {https://archive.org/details/timeseriesanalys0000boxg/page/n1/mode/2up}.
+
+\bibitem{zambiaES}
+Jere \bgroup\fonteauteurs\bgroup Stanley\egroup\egroup{} et Siyanga
+  \bgroup\fonteauteurs\bgroup Mubita\egroup\egroup{} :
+\newblock Forecasting inflation rate of zambia using holt’s exponential
+  smoothing.
+\newblock {\em Journal of Statistics}, 6(2), 2016.
+\newblock \url {https://www.scirp.org/pdf/_2016042714193220.pdf}.
 
 \bibitem{hughchristensen}
 Nochai \bgroup\fonteauteurs\bgroup Rangsan\egroup\egroup{} et Nochai
