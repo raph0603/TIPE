@@ -23,7 +23,7 @@
 
 % Mettez votre titre de TIPE et votre nom ci-après
 \title{Titre de mon TIPE}
-\author{F. Serier, MP\oldstylenums{1}-MPi, \oldstylenums{\the\year}-\oldstylenums{\arabic{nextyear}} }
+\author{Raphaël Laborie, MP\oldstylenums{1}-MPi, \oldstylenums{\the\year}-\oldstylenums{\arabic{nextyear}} }
 %% À décommenter si vous ne voulez pas que la date apparaisse explicitement
 %\date{}
 
@@ -35,7 +35,7 @@
 % le nom de celui qui fait la remarque et le second la remarque 
 % proprement dite: \question{jj}{Que voulez-vous dire par là ?}
 % \reponse{Droopy}{I'm very happy...}
-\usepackage{todonotes}  
+\usepackage{todonotes}
 \newcommand{\question}[2]{\todo[inline,author=#1]{#2}}
 \newcommand{\reponse}[2]{\todo[inline,color=green,author=#1]{#2}}
 
@@ -72,47 +72,45 @@
 
 \maketitle
 %--------------------------------------------------
-\section*{Motivations pour le choix du sujet (50 mots)}
+\section*{Motivations pour le choix du sujet}
 %--------------------------------------------------
-Bla bla bla
+Les énergies renouvelables sont un défi de plus en plus important dans un monde en constante transformation et dont les ressources deviennent limitées.
+Les smart grids offrent une nouvelle approche sur la gestion de l'énergie et posent plus que jamais la question d'une anticipation fine des consommations électriques.
 %--------------------------------------------------
-\section*{Ancrage du sujet au thème de l'année (50 mots)}
+\section*{Ancrage du sujet au thème de l'année}
 %--------------------------------------------------
-Bla bla bli
+Les villes, principales places du développement des smart grids, voient naître plusieurs de ces nouveaux systèmes de gestion d'énergie. Donnant lieu à un problème d'optimisation, l'anticipation de la consommation électrique des villes constitue le défi majeur dans le fonctionnement de beaucoup de smart grids.
 %--------------------------------------------------
-\positionnementThematique{Physique théorique, Astrophysique, Informatique}
+\positionnementThematique{Informatique théorique, Informatique pratique, Mathématiques appliquées}
 %--------------------------------------------------
-\motclefs{Gravitation -- Relativité -- Mercure -- Périhélie -- Avance}{Gravitation -- Relativity -- Mercury -- Perihelion -- Advance}
+\motclefs{Prévisions -- Réseaux intelligents -- Graphes de Visibilités -- Régression polynomiale}{Forecasting -- Smart grids -- Visibility Graphs -- Polynomiale Regression}
 %--------------------------------------------------
 \section*{Bibliographie commentée (650 mots maximum)}
 %--------------------------------------------------
 % D'après TeXcount, la section fait 366 mots: 
 % 366+3+0 (1/0/4/0)
 
-Le problème de l'avance du périhélie de Mercure s'est rapidement 
-          posé après que Newton ait posé la loi de la gravitation universelle en $1/r^2$. En fait, les observations s'accordaient tellement bien à ses prédictions théoriques (de plus en plus étoffées à mesure du temps) qu'elle ne pouvait être fausse. Mais les observations, de plus en plus précises elles aussi, montrèrent que la trajectoire de Mercure n'était pas une ellipse fermée comme le prédisait la mécanique classique mais une trajectoire, elliptique en première approximation, dont la direction du périhélie (point de passage au plus proche du Soleil) tournait au cours du temps.
+L'économie actuelle est sujette à de nombreuses fluctuation, ce qui en fait un sujet propice à l'application de la méthode connue sous le nom de ARIMA. La recherche d'un modèle adapté \cite{hughchristensen} à l'application de cette meme méthode \cite{economyarima} est une étape importante lors de la mise en place de l'algorithme. Très adaptée à une application sur les séries temporelles, cette méthode s'appuye beaucoup sur l'autocorrélation des données et les patternes récurrents.
 
+Une autre approche pour la prévision est la méthode Exponential Smoothing \cite{exporeview} \cite{exporeview2} . Beaucoup utilisée pour des applications économiques \cite{zambiaeconomy}, elle convient très bien à des prévisions sur le court terme. Contrairement à la méthode ARIMA, cette méthode tient compte des comportements saisonniers et des tendances.
 
-Cette avance s'élevait à $574$ secondes d'arc par siècle mais la théorie newtonienne (s'aidant des perturbations induites par les autres planètes sur la trajectoire de Mercure) ne permettait d'en expliquer \ofg{que}  $531$ secondes par siècle. Restent donc les \ofg{fameuses} $43$ secondes d'arc par siècle d'avance que seule la théorie de la relativité générale pu correctement prédire \cite{einstein1916grundlage}.
-
-Fort de son succès de la découverte de Neptune via les perturbations de l'orbite d'Uranus \cite{leVerrier1846}, l'astronome Urbain Le Verrier proposa en \oldstylenums{1859} \cite{leVerrier1859theorie,WikiMercure} l'existence d'une planète d'orbite intramercurielle (qu'il prénomma \ofg{Vulcain}) dont les perturbations gravitationnelles seraient à même d'expliquer les 43 secondes manquantes. Malheureusement, malgré de nombreuses observations, cette planète ne pu jamais être mise en évidence.
-
-Les tentatives précédentes n'ayant pas porté leurs fruits, on chercha donc à développer d'autres explications ou théories pouvant rendre compte de cette avance de 43 secondes. C'est ainsi que Paul Gerber \cite{gerber1898raumliche} postula que l'influx gravitationnel n'était pas instantané comme l'affirmait Newton, mais se propageait à une vitesse finie, celle de la lumière dans le vide, tout comme les ondes électromagnétiques. En développant les implications de sa théorie, il arriva à la même formule théorique qu'Einstein obtiendra quelques années plus tard avec la relativité générale. Malheureusement pour lui, ses travaux ne furent pas reconnus et il s'avéra par la suite qu'il avait obtenu la bonne formule par hasard après plusieurs erreurs de raisonnement.
-
-La théorie de la relativité restreinte \cite{MPEinsteinSpecialRelativity} proposée par Einstein \cite{einstein1905erzeugung} induit elle aussi une précession du périhélie, mais de seulement 6 secondes d'angle par siècle, insuffisante pour expliquer l'ensemble des observations. Ce n'est qu'avec la théorie de la relativité générale \cite{einstein1916grundlage} que les 43 secondes d'angle manquantes sont expliquées \cite{silberstein1917motion,PlusieursAuteurs}.
 %--------------------------------------------------
 \section*{Problématique retenue (50 mots)}
 %--------------------------------------------------
- Dans tous les ouvrages de vulgarisation traitant d'un peu de relativité, on cite l'explication du phénomène de précession de Mercure parmi les principaux arguments en faveur de la relativité au début du siècle avec, notamment, la déflexion des rayons lumineux au voisinage d'une forte masse qui fut vérifiée lors de l'éclipse de soleil de 1919 ou le phénomène de décalage spectral vers le rouge. Il m'a semblé intéressant de voir dans quelle mesure la relativité explique les 43 secondes d'arc d'avance par siècle que ne pouvait prévoir Newton.
+ Les smart grids sont de plus en plus utilisées pour contrôller la distribution de l'électricité dans les villes et elles nécessitent toutes d'anticiper la consommation en électricité pour adapter la production à la demande. Plusieurs méthodes sont proposées pour anticiper cette consommation d'énergie. On se demandera alors, au moyen d'une étude comparative : avec quelles méthodes et dans quelles conditions est-il possible d'anticiper la consommation électrique des villes ?
 %--------------------------------------------------
 \section*{Objectifs du TIPE (100 mots maximum)}
 %--------------------------------------------------
 \begin{enumerate}
-	\item	Modélisation: après quelques rappels théoriques, je montrerai que les principes de la relativité restreinte, d'une part, et de la relativité générale, d'autre part, mènent à des équations qui induisent naturellement une avance du périhélie.
+    \item   Identification du problème: Une compréhension claire du problème permet de chosir un modèle adapté à la prévision de la consommation et au traitement des données.
+
+    \item   Elaboration d'un modèle simple: Un modèle simple de régression polynomiale donnera une référence basique pour comparer les résultats obtenus après application des algorithmes traités lors du projet.
+	
+    \item   Traitement des données et algorithmique: Une fois le problème scerné et le modèle choisi, le but sera d'appliquer les méthodes ARIMA et Exponential Smoothing pour obtenir une prévision de la consommation sur court et long terme.
     
-    \item	Simulation numérique: La résolution des équations précédentes numériquement permet de traiter de l'influence de divers paramètres et notamment expliquer pourquoi ce n'est que pour Mercure que cet effet est effectivement mesurable.
+    \item	Comparaison des résultats: Après la comparaison des résultats des différents algorithmes entre eux et avec le modèle simple, le but sera d'identifier les points forts et les points faibles de chaque algorithme et d'interpréter les résultats, en donnant une idée de l'efficacité de chacun d'entre eux.
     
-    \item	Observations: Au vu des faibles valeurs effectivement observées, j'essaierai de montrer à quelle précision doivent s'effectuer les observations pour être capable de mesurer cet effet et prouver que celui-ci ne peut pas être expliqué par de simples incertitudes de mesure.
+    \item   Amélioration des algorithmes: L'identification précédente des points forts et faibles des algorithmes et leur mutuelle complétion permettra de proposer une approche combinant la méthode ARIMA et la méthode Exponential Smoothing.
 \end{enumerate}
 %--------------------------------------------------
 %--------------------------------------------------

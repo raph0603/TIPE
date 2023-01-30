@@ -3,64 +3,42 @@
 \def\fonteauteurs{\scshape}\fi
 \makeatother
 
-\bibitem{einstein1916grundlage}
-Albert \bgroup\fonteauteurs\bgroup Einstein\egroup\egroup{} :
-\newblock Die grundlage der allgemeinen relativit{\"a}tstheorie.
-\newblock {\em Annalen der Physik}, 354(7)\string:\penalty500\relax 769--822,
-  1916.
+\bibitem{hughchristensen}
+Nochai \bgroup\fonteauteurs\bgroup Rangsan\egroup\egroup{} et Nochai
+  \bgroup\fonteauteurs\bgroup Titidia\egroup\egroup{} :
+\newblock Arima model for forecasting oil palm price.
+\newblock \emph{In} {\em 2nd IMT-GT Regional Conference On Mathematics,
+  Statistics and Applications, University Sains Malaysia, Penang}, 2006.
+\newblock \url {https://hughchristensen.com/papers/academic_papers/ST03.pdf}.
 
-\bibitem{leVerrier1846}
-Urbain~J \bgroup\fonteauteurs\bgroup Le~Verrier\egroup\egroup{} :
-\newblock Recherches sur les mouvements d'uranus par uj le verrier
-  (beschlu{\ss}.).
-\newblock {\em Astronomische Nachrichten}, 25\string:\penalty500\relax 85,
-  1846.
+\bibitem{economyarima}
+Adebiyi. \bgroup\fonteauteurs\bgroup Ayodele\egroup\egroup{}, A. et Adewumi
+  \bgroup\fonteauteurs\bgroup Aderemi\egroup\egroup{}, O. :
+\newblock Stock price prediction using the arima model.
+\newblock \emph{In} {\em UKSim-AMSS 16th International Conference on Computer
+  Modelling and Simulation}, 2014.
+\newblock \url {http://eprints.lmu.edu.ng/2357/1/UKSim2014_IEEE.pdf}.
 
-\bibitem{leVerrier1859theorie}
-Urbain~J \bgroup\fonteauteurs\bgroup Le~Verrier\egroup\egroup{} :
-\newblock Theorie du mouvement de mercure.
-\newblock \emph{In} {\em Annales de l'Observatoire de Paris}, volume~5, page~1,
-  1859.
+\bibitem{exporeview}
+Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
+\newblock {\em Journal of forecasting, Exponential Smoothing: The state of the
+  art}, volume~4.
+\newblock 1985.
+\newblock \url {}.
 
-\bibitem{WikiMercure}
-\bgroup\fonteauteurs\bgroup Wikipédia\egroup\egroup{} :
-\newblock Précession du périhélie.
-\newblock Wikipédia, Novembre 2016.
-\newblock \url{
-  https://fr.wikipedia.org/wiki/Mercure_(plan%C3%A8te)#Pr.C3.A9cession_du_p.C3.A9rih.C3.A9lie}.
+\bibitem{exporeview2}
+Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
+\newblock {\em Journal of forecasting, Exponential Smoothing: The state of the
+  art part II}, volume~4.
+\newblock 1985.
+\newblock \url {https://www.bauer.uh.edu/gardner/Exponential-Smoothing.pdf}.
 
-\bibitem{gerber1898raumliche}
-Paul \bgroup\fonteauteurs\bgroup Gerber\egroup\egroup{} :
-\newblock Die r{\"a}umliche und zeitliche ausbreitung der gravitation.
-\newblock {\em Zeitschrift f. Mathematik und Physik},
-  43\string:\penalty500\relax 93--104, 1898.
-\newblock \url{ http://bourabai.kz/articles/gerber/gerber-1902.pdf}.
-
-\bibitem{MPEinsteinSpecialRelativity}
-\bgroup\fonteauteurs\bgroup MinutePhysics\egroup\egroup{} :
-\newblock Einstein and the special theory of relativity.
-\newblock Vidéo Youtube, Mars 2012.
-\newblock \url {https://www.youtube.com/watch?v=ajhFNcUTJI0}.
-
-\bibitem{einstein1905erzeugung}
-Albert \bgroup\fonteauteurs\bgroup Einstein\egroup\egroup{} :
-\newblock {\"U}ber einen die erzeugung und verwandlung des lichtes betreffenden
-  heuristischen gesichtspunkt.
-\newblock {\em Annalen der Physik}, 322(6)\string:\penalty500\relax 132--148,
-  1905.
-
-\bibitem{silberstein1917motion}
-Lndwik \bgroup\fonteauteurs\bgroup Silberstein\egroup\egroup{} :
-\newblock The motion of the perihelion of mercury deduced from the classical
-  theory of relativity.
-\newblock {\em Monthly Notices of the Royal Astronomical Society},
-  77\string:\penalty500\relax 503--510, 1917.
-
-\bibitem{PlusieursAuteurs}
-Marie-Antoinette \bgroup\fonteauteurs\bgroup Tonnelat\egroup\egroup{} et
-  Jacques~E \bgroup\fonteauteurs\bgroup Romain\egroup\egroup{} :
-\newblock Les v{\'e}rifications exp{\'e}rimentales de la relativit{\'e}
-  g{\'e}n{\'e}rale.
-\newblock {\em Physics Today}, 18\string:\penalty500\relax 49, 1965.
+\bibitem{zambiaeconomy}
+Jere \bgroup\fonteauteurs\bgroup Stanley\egroup\egroup{} et Siyanga
+  \bgroup\fonteauteurs\bgroup Mubita\egroup\egroup{} :
+\newblock Forecasting inflation rate of zambia using holt’s exponential
+  smoothing.
+\newblock {\em Journal of Statistics}, 6(2), 2016.
+\newblock \url {https://www.scirp.org/pdf/_2016042714193220.pdf}.
 
 \end{thebibliography}

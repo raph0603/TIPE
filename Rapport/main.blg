@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: unsrt-fr.bst
 Database file #1: biblio.bib
-You've used 9 entries,
+Warning--empty publisher in exporeview
+Warning--empty publisher in exporeview2
+You've used 5 entries,
             1878 wiz_defined-function locations,
-            546 strings with 5540 characters,
-and the built_in function-call counts, 1779 in all, are:
-= -- 161
-> -- 39
+            508 strings with 5061 characters,
+and the built_in function-call counts, 930 in all, are:
+= -- 71
+> -- 29
 < -- 2
-+ -- 19
-- -- 10
-* -- 107
-:= -- 296
-add.period$ -- 21
-call.type$ -- 9
-change.case$ -- 9
++ -- 13
+- -- 8
+* -- 46
+:= -- 158
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 79
-empty$ -- 202
-format.name$ -- 10
-if$ -- 413
+cite$ -- 7
+duplicate$ -- 52
+empty$ -- 109
+format.name$ -- 8
+if$ -- 220
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 5
 missing$ -- 7
-newline$ -- 54
-num.names$ -- 9
-pop$ -- 23
+newline$ -- 36
+num.names$ -- 5
+pop$ -- 24
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 29
+skip$ -- 16
 stack$ -- 0
-substring$ -- 107
-swap$ -- 14
+substring$ -- 0
+swap$ -- 9
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 19
-width$ -- 10
-write$ -- 109
+warning$ -- 2
+while$ -- 5
+width$ -- 6
+write$ -- 66
+(There were 2 warnings)
