@@ -1,7 +1,13 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname fonteauteurs\endcsname\relax
 \def\fonteauteurs{\scshape}\fi
 \makeatother
+
+\bibitem{polyregrEva}
+Eva \bgroup\fonteauteurs\bgroup Ostertagová\egroup\egroup{} :
+\newblock {\em Modelling using Polynomial Regression}, volume~48, pages
+  500--506.
+\newblock Elsevier, 2012.
 
 \bibitem{exporeview}
 Gardner \bgroup\fonteauteurs\bgroup Dr.~Everette\egroup\egroup{} :
@@ -16,6 +22,12 @@ Jenkins \bgroup\fonteauteurs\bgroup Gwylim\egroup\egroup{} et Box
 \newblock San-Francisco : Holden days, 1970.
 \newblock libre accès au livre par archive internet: \url
   {https://archive.org/details/timeseriesanalys0000boxg/page/n1/mode/2up}.
+
+\bibitem{polyregrElias}
+Elias \bgroup\fonteauteurs\bgroup Masry\egroup\egroup{} :
+\newblock {\em Multivariate regression estimation Local polynomial fitting for
+  time series}, pages 81--101.
+\newblock Elsevier, 1996.
 
 \bibitem{zambiaES}
 Jere \bgroup\fonteauteurs\bgroup Stanley\egroup\egroup{} et Siyanga
@@ -40,5 +52,28 @@ Adebiyi. \bgroup\fonteauteurs\bgroup Ayodele\egroup\egroup{}, A. et Adewumi
 \newblock \emph{In} {\em UKSim-AMSS 16th International Conference on Computer
   Modelling and Simulation}, 2014.
 \newblock \url {http://eprints.lmu.edu.ng/2357/1/UKSim2014_IEEE.pdf}.
+
+\bibitem{visigraphPhyA}
+Liu \bgroup\fonteauteurs\bgroup Chuang\egroup\egroup{}, Zhou
+  \bgroup\fonteauteurs\bgroup Wei-Xing\egroup\egroup{} et Wei-Kang
+  \bgroup\fonteauteurs\bgroup Zang\egroup\egroup{} :
+\newblock Statistical properties of visibility graph of energy dissipation
+  rates in three-dimensional fully developed turbulence.
+\newblock {\em Physica A: Statistical Mechanics and its Applications}, 389(13),
+  2010.
+\newblock \url {https://arxiv.org/pdf/0905.1831.pdf}.
+
+\bibitem{visigraphTEPJB}
+Lacasa \bgroup\fonteauteurs\bgroup Lucas\egroup\egroup{} et Nu~̃nez
+  \bgroup\fonteauteurs\bgroup Angel\egroup\egroup{} :
+\newblock Time series irreversibility: a visibility graph approach.
+\newblock {\em The European Physical Journal B}, 85(217), 2012.
+
+\bibitem{visigraphPNAS}
+Lacasa \bgroup\fonteauteurs\bgroup Lucas\egroup\egroup{} et Bartolo
+  \bgroup\fonteauteurs\bgroup Luque\egroup\egroup{} :
+\newblock From time series to complex networks:the visibility graph.
+\newblock {\em PNAS}, 105(13), 2008.
+\newblock \url {https://www.pnas.org/doi/epdf/10.1073/pnas.0709247105}.
 
 \end{thebibliography}

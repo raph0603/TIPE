@@ -90,15 +90,19 @@ Les villes, principales places du développement des smart grids, voient naître
 % D'après TeXcount, la section fait 366 mots: 
 % 366+3+0 (1/0/4/0)
 
-La prédiction est un domaine qui s'est étendu durant les dernières années et qui a profité aussi bien de l'évolution des techniques que de la recherche dans ce domaine. Si dernièrement les méthodes les plus utilisées sont basées sur l'utilisation de Réseaux de Neurones Artificiels, ou Artificial Neural Newtork (ANN) en anglais, certains modèles plus anciens (mais qui restent malgré tout parmis les plus utilisés) sont les régressions telles que les régressions polynomiales (Polynomial Regression), les moyennes mobiles (Moving Average) et, les régressions exponentielles (Exponential Smoothing), une forme plus avancée de moyenne mobile \cite{exporeview}.
+La prédiction est un domaine qui s'est étendu durant les dernières années et qui a profité aussi bien de l'évolution des techniques que de la recherche dans ce domaine. Si dernièrement les méthodes les plus utilisées sont basées sur l'utilisation de Réseaux de Neurones Artificiels, ou Artificial Neural Newtork (ANN) en anglais, certains modèles plus anciens (mais qui restent malgré tout parmis les plus utilisés) sont les régressions telles que les régressions polynomiales \cite{polyregrEva} (Polynomial Regression), les moyennes mobiles (Moving Average) et, les régressions exponentielles (Exponential Smoothing), une forme plus avancée de moyenne mobile \cite{exporeview}.
 
 En parallèle se développe la methode ARIMA (Auto Regressive Integrated Moving Average, ou Moyenne Mobile Intégrée Auto Régressive). Après la publication du livre de George Box et Gwylim Jenkins en 1970 \cite{boxjenkins}, elle est largement démocratisée et voit naître avec elle une méthode, aujourd'hui encore relativement répendue. Cette méthode permet de vérifier la précision d'un modèle. Elle est appelée "Box-Jenkins" en hommage à ses créateurs.
+
+En terme de prévisions, la méthode de régression linéaire est un modèle assez simple à mettre en place, mais qui apporte bien souvent des résultats non-fidèles à la réalité. Ainsi, la méthode de régression polynomiale, une généralisation aux polynômes de degrés quelconques, apporte une meilleure précision. Elle est particulièrement efficace pour des prévisions très localisées. Cette méthode s'appuye sur la méthode des moindre carrés \cite{polyregrEva,polyregrElias} décomposant le problème en plusieurs problèmes de régression linéaire. 
 
 Les applications de ces méthodes sont diverses et variées. Leurs domaines d'application vont de l'anticipation du cours de la monnaie \cite{zambiaES} à la prévision du comportement de la production de riz en Indonésie.
 
 L'économie actuelle est sujette à de nombreuses fluctuation, ce qui en fait un sujet propice à l'application de la méthode ARIMA. La recherche d'un modèle adapté \cite{hughchristensen} à cette application \cite{economyARIMA} est une étape importante lors de la mise en place de l'algorithme. Très utile pour une application sur les séries temporelles (time series), elle s'appuye principalement sur l'autocorrélation des données et les motifs récurrents.
 
 Une autre approche pour la prévision est la méthode Exponential Smoothing \cite{exporeview}. Beaucoup utilisée pour des applications économiques, elle convient très bien à des prévisions sur le court terme. Contrairement à la méthode ARIMA, cette méthode tient compte des comportements saisonniers et des tendances et convient en particulier pour des données stationnaires.
+
+Il existe, également des méthodes plus récentes, comme les graphes de visibilité \cite{visigraphPhyA, visigraphTEPJB}. Cette méthode utilise le principe de similarité, en transformant un jeu de données/séries temporelles (time series) en un graphe \cite{visigraphPNAS} dont les arêtes représentent les similarités entre les données. Comme pour la méthode ARIMA, cette méthode est basée sur la reconnaissance de motifs. Elle est particulièrement efficace pour des prévisions sur le long terme. 
 
 %--------------------------------------------------
 \section*{Problématique retenue (50 mots)}
