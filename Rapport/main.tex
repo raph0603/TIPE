@@ -22,7 +22,7 @@
 \addtocounter{nextyear}{1}
 
 % Mettez votre titre de TIPE et votre nom ci-après
-\title{Prévisions : l'Enjeux d'un Futur Durable (à voir avec le collègue)}
+\title{Prévisions : l'Enjeux d'un Futur Énergétique Durable}
 \author{Raphaël Laborie, MP\oldstylenums{1}-MPi, \oldstylenums{\the\year}-\oldstylenums{\arabic{nextyear}} }
 %% À décommenter si vous ne voulez pas que la date apparaisse explicitement
 %\date{}
@@ -90,19 +90,21 @@ Les villes, principales places du développement des smart grids, voient naître
 % D'après TeXcount, la section fait 366 mots: 
 % 366+3+0 (1/0/4/0)
 
-La prédiction est un domaine qui s'est étendu durant les dernières années et qui a profité aussi bien de l'évolution des techniques que de la recherche dans ce domaine. Si dernièrement les méthodes les plus utilisées sont basées sur l'utilisation de Réseaux de Neurones Artificiels, ou Artificial Neural Newtork (ANN) en anglais, certains modèles plus anciens (mais qui restent malgré tout parmis les plus utilisés) sont les régressions telles que les régressions polynomiales \cite{polyregrEva} (Polynomial Regression), les moyennes mobiles (Moving Average) et, les régressions exponentielles (Exponential Smoothing), une forme plus avancée de moyenne mobile \cite{exporeview}.
+Les Smart Grids, ou Réseaux Intelligents, se sont largement démocratisées ces dernières années. Adoptée par de grands fournisseurs d'énergie comme Enedis ou EDF, cette nouvelle gestion de la répartition énergétique est prometteuse. Produits d'innovations techniques, ces Smart Grids, basées sur l'emploi d'un large spectre énergétique et l'anticipation fine de la consommation, ont pour ambition la réduction drastique des pertes énergétiques et la mise au premier plan des énergies renouvelables. Pour cela, elles utilisent une répartition plus locale de l'énergie au sein d'un réseau de distribution, qui évolue en fonction de la demande réelle.
 
-En parallèle se développe la methode ARIMA (Auto Regressive Integrated Moving Average, ou Moyenne Mobile Intégrée Auto Régressive). Après la publication du livre de George Box et Gwylim Jenkins en 1970 \cite{boxjenkins}, elle est largement démocratisée et voit naître avec elle une méthode, aujourd'hui encore relativement répendue. Cette méthode permet de vérifier la précision d'un modèle. Elle est appelée "Box-Jenkins" en hommage à ses créateurs.
+La prédiction est un domaine qui s'est étendu durant les dernières années et qui a profité aussi bien de l'évolution des techniques que de la recherche dans ce domaine. Si dernièrement les méthodes les plus utilisées sont basées sur l'utilisation de Réseaux de Neurones Artificiels, ou Artificial Neural Newtork (ANN) en anglais, certains modèles plus anciens (mais qui restent malgré tout parmi les plus utilisés) sont les régressions telles que les régressions polynomiales \cite{polyregrEva} (Polynomial Regression), les moyennes mobiles (Moving Average) , et les régressions exponentielles (Exponential Smoothing), une forme plus avancée de moyenne mobile \cite{exporeview}.
 
-En terme de prévisions, la méthode de régression linéaire est un modèle assez simple à mettre en place, mais qui apporte bien souvent des résultats non-fidèles à la réalité. Ainsi, la méthode de régression polynomiale, une généralisation aux polynômes de degrés quelconques, apporte une meilleure précision. Elle est particulièrement efficace pour des prévisions très localisées. Cette méthode s'appuye sur la méthode des moindre carrés \cite{polyregrEva,polyregrElias} décomposant le problème en plusieurs problèmes de régression linéaire. 
+En parallèle, se développe la méthode ARIMA (Auto Regressive Integrated Moving Average, ou Moyenne Mobile Intégrée Auto Régressive). Après la publication du livre de George Box et Gwylim Jenkins en 1970 \cite{boxjenkins}, elle est largement démocratisée et voit naître avec elle une méthode, aujourd'hui encore relativement répandue. Cette méthode permet de vérifier la précision d'un modèle. Elle est appelée "Box-Jenkins" en hommage à ses créateurs.
+
+En termes de prévisions, la méthode de régression linéaire est un modèle assez simple à mettre en place, mais qui apporte bien souvent des résultats non-fidèles à la réalité. Ainsi, la méthode de régression polynomiale, une généralisation aux polynômes de degrés quelconques, apporte une meilleure précision. Elle est particulièrement efficace pour des prévisions très localisées. En outre, cette méthode peut s'appuyer sur la méthode des moindre carrés \cite{polyregrEva,polyregrElias} décomposant le problème en plusieurs petits problèmes de régression linéaire.
 
 Les applications de ces méthodes sont diverses et variées. Leurs domaines d'application vont de l'anticipation du cours de la monnaie \cite{zambiaES} à la prévision du comportement de la production de riz en Indonésie.
 
-L'économie actuelle est sujette à de nombreuses fluctuation, ce qui en fait un sujet propice à l'application de la méthode ARIMA. La recherche d'un modèle adapté \cite{hughchristensen} à cette application \cite{economyARIMA} est une étape importante lors de la mise en place de l'algorithme. Très utile pour une application sur les séries temporelles (time series), elle s'appuye principalement sur l'autocorrélation des données et les motifs récurrents.
+L'économie actuelle est sujette à de nombreuses fluctuations, ce qui en fait un sujet propice à l'application de la méthode ARIMA. La recherche d'un modèle adapté \cite{hughchristensen} à cette application \cite{economyARIMA} est une étape importante lors de la mise en place de l'algorithme. Très utile pour une application sur les séries temporelles (time series), elle s'appuie principalement sur l'autocorrélation des données et les motifs récurrents.
 
-Une autre approche pour la prévision est la méthode Exponential Smoothing \cite{exporeview}. Beaucoup utilisée pour des applications économiques, elle convient très bien à des prévisions sur le court terme. Contrairement à la méthode ARIMA, cette méthode tient compte des comportements saisonniers et des tendances et convient en particulier pour des données stationnaires.
+Les régressions exponentielles, ou Exponential Smoothing, constituent une autre approche face à ce problème \cite{exporeview}. Beaucoup utilisée pour des applications économiques, elle convient très bien à des prévisions sur le court terme. Contrairement à la méthode ARIMA, cette méthode tient compte des comportements saisonniers et des tendances et convient en particulier pour des données stationnaires.
 
-Il existe, également des méthodes plus récentes, comme les graphes de visibilité \cite{visigraphPhyA, visigraphTEPJB}. Cette méthode utilise le principe de similarité, en transformant un jeu de données/séries temporelles (time series) en un graphe \cite{visigraphPNAS} dont les arêtes représentent les similarités entre les données. Comme pour la méthode ARIMA, cette méthode est basée sur la reconnaissance de motifs. Elle est particulièrement efficace pour des prévisions sur le long terme. 
+Il existe, également des méthodes plus récentes, comme les graphes de visibilité \cite{visigraphPhyA, visigraphTEPJB}. Cette méthode utilise le principe de similarité, en transformant un jeu de données/séries temporelles (time series) en un graphe \cite{visigraphPNAS} dont les arêtes représentent les similarités entre les données. Comme pour la méthode ARIMA, cette méthode est basée sur la reconnaissance de motifs. Elle est particulièrement efficace pour des prévisions sur le long terme.
 
 %--------------------------------------------------
 \section*{Problématique retenue (50 mots)}
@@ -114,11 +116,11 @@ Il existe, également des méthodes plus récentes, comme les graphes de visibil
 \begin{enumerate}
     \item   Compréhension du problème et de ses enjeux pour choisir un modèle adapté.
 
-    \item   Etude de la méthode de régression polynomiale et application à des données simples.
+    \item   Étude de la méthode de régression polynomiale et application à des données simples.
 	
-    \item   Application de la méthode des Graphes de Visibilité : par la construction d'un graphe de visibilité, la définition et l'identification des similarités puis, l'annonce des prévisions sur des données simples.
+    \item   Application de la méthode des Graphes de Visibilités : par la construction d'un graphe de visibilité, la définition et l'identification des similarités, puis l'annonce des prévisions sur des données simples.
     
-    \item	Analyse des résultats obtenus : donner les domaines de fonctionnement optimales de chaque méthode en fonction des paramètres apportés. Rendre compte alors des méthodes pour déterminer la plus efficaces.
+    \item	Analyse des résultats obtenus : donner les domaines de fonctionnements optimaux de chaque méthode en fonction des paramètres apportés. Rendre compte alors des méthodes pour déterminer la plus efficace.
     
     \item   Confrontation des algorithmes à des données réelles, et études des limites et améliorations possibles de chaque méthode.
 \end{enumerate}
