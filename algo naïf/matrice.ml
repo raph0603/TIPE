@@ -1,8 +1,5 @@
 type matrice = int array array
 
-let a = [| [|0;1;2|] |]
-let b = [| [|0|]; [|1|]; [|2|] |]
-
 exception Tailles_incompatibles
 
 let somme_matriciel (a: matrice) (b : matrice) : matrice =
@@ -37,7 +34,3 @@ let produit_matriciel (a: matrice) (b : matrice) : matrice =
       done
     done;
     c
-
-
-(*let c = somme_matriciel a b*)
-let d = produit_matriciel a b
