@@ -32,5 +32,9 @@
   ],
   "githubPullRequests.ignoredPullRequestBranches": [
     "main"
-  ]
+  ],
+  "ocaml.sandbox": {
+    "kind": "opam",
+    "switch": "4.13.1"
+  }
 }
