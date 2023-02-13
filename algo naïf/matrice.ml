@@ -133,7 +133,7 @@ let inverse_matrice (a : matrice) : matrice =
     
 let m = [| [| 5.; 7.; -3. |]; [| 4.; 2.; -1. |]; [| 9.; -4.; 6. |] |];;
 
-(*determinant_matrice m;;*)
-comatrice_matrice m;;
-produit_lambda_matrice 2. m;;
-inverse_matrice m;;
+1. /. (determinant_matrice m);;
+repr_matrice (transposee_matrice (comatrice_matrice m));;
+(* produit_lambda_matrice 2. m;; *)
+repr_matrice (inverse_matrice m);;
