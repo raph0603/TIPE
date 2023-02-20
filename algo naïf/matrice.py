@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def somme_matrice(a, b):
 	"""retourne la somme de deux matrices"""
 	am = len(a)
@@ -19,6 +21,7 @@ def produit_matrice(a, b):
 	bm = len(b)
 	bn = len(b[0])
 	if an != bm:
+		print("Les matrices ne sont pas compatibles\n")
 		return None
 	c = [[0 for j in range(bn)] for i in range(am)]
 	for i in range(am):
@@ -34,11 +37,11 @@ def repr_matrice(a):
 	for i in range(n):
 		for j in range(m):
 			print("|", a[i][j],"|", end="")
-		print("\n")
+		print("")
 	print("\n")
 
 def transposee_matrice(a):
-	"""retourne la transposée d'une matrice"""
+	"""retourne la transposee d'une matrice"""
 	n = len(a)
 	m = len(a[0])
 	b = [[0 for j in range(n)] for i in range(m)]
@@ -48,10 +51,11 @@ def transposee_matrice(a):
 	return b
 
 def determinant_matrice(a):
-	"""retourne le déterminant d'une matrice"""
+	"""retourne le determinant d'une matrice"""
 	n = len(a)
 	m = len(a[0])
 	if n != m:
+		print("La matrice n'est pas carree\n")
 		return None
 	if n == 1:
 		return a[0][0]
@@ -72,6 +76,7 @@ def comatrice_matrice(a):
 	n = len(a)
 	m = len(a[0])
 	if n != m:
+		print("La matrice n'est pas carree\n")
 		return None
 	b = [[0 for j in range(n)] for i in range(n)]
 	for i in range(n):
@@ -97,21 +102,22 @@ def inverse_matrice(a):
 	"""retourne l'inverse d'une matrice"""
 	det = determinant_matrice(a)
 	if det == 0:
+		print("La matrice n'est pas inversible\n")
 		return None
 	b = comatrice_matrice(a)
-	repr_matrice(b)
+	# repr_matrice(b)
 	b = transposee_matrice(b)
-	repr_matrice(b)
-	print(1/det)
+	# repr_matrice(b)
+	# print(1/det)
 	b = produit_scalaire_matrice(1 / det, b)
 	return b
 
-matrice = [[5, 7, -3], [4, 2, -1], [9, -4, 6]]
+# matrice = [[5, 7, -3], [4, 2, -1], [9, -4, 6]]
 # repr_matrice(matrice)
 # c = comatrice_matrice(matrice)
 # repr_matrice(c)
-det = determinant_matrice(matrice)
-print(1 / det)
-repr_matrice(transposee_matrice(comatrice_matrice(matrice)))
-inv = inverse_matrice(matrice)
-repr_matrice(inv)
+# det = determinant_matrice(matrice)
+# print(1 / det)
+# repr_matrice(transposee_matrice(comatrice_matrice(matrice)))
+# inv = inverse_matrice(matrice)
+# repr_matrice(inv)

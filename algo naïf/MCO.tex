@@ -1,0 +1,59 @@
+\documentclass[21pt,a4paper,twoside]{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\begin{document}\Large
+\begin{equation}
+	\min S = \min \sum_{i = 1}^{n} (ax_i^2 + bx_i + c - y_i)^2
+\end{equation}
+	\newline
+	\begin{equation}
+		\frac{\partial S}{\partial a} = \sum_{i=1}^{n} \not{2} (ax_i^2 + bx_i + c - y_i) x_i^2 = 0
+	\end{equation}
+	\begin{equation}
+		\frac{\partial S}{\partial b} = \sum_{i=1}^{n} \not{2} (ax_i^2 + bx_i + c - y_i) x_i = 0
+	\end{equation}
+	\begin{equation}
+		\frac{\partial S}{\partial c} = \sum_{i=1}^{n} \not{2} (ax_i^2 + bx_i + c - y_i) = 0
+	\end{equation}
+	\newline
+	\begin{equation}
+		\frac{\partial S}{\partial a} = \sum_{i=1}^{n} (ax_i^2 + bx_i + c) x_i^2 - \sum_{i=1}^{n} x_i^2 y_i = 0
+	\end{equation}
+	\begin{equation}
+		\frac{\partial S}{\partial b} = \sum_{i=1}^{n} (ax_i^2 + bx_i + c) x_i - \sum_{i=1}^{n} x_i y_i = 0
+	\end{equation}
+	\begin{equation}
+		\frac{\partial S}{\partial c} = \sum_{i=1}^{n} (ax_i^2 + bx_i + c) - \sum_{i=1}^{n} y_i = 0
+	\end{equation}
+	\newline
+	\begin{equation}
+		\frac{\partial S}{\partial a} = a\sum_{i=1}^{n} ax_i^4 + b\sum_{i=1}^{n} x_i^3 + c\sum_{i=1}^{n} x_i^2 = \sum_{i=1}^{n} x_i^2 y_i
+	\end{equation}
+	\begin{equation}
+		\frac{\partial S}{\partial b} = a\sum_{i=1}^{n} ax_i^3 + b\sum_{i=1}^{n} x_i^2 + c\sum_{i=1}^{n} x_i = \sum_{i=1}^{n} x_i y_i
+	\end{equation}
+	\begin{equation}
+		\frac{\partial S}{\partial c} = a\sum_{i=1}^{n} ax_i^2 + b\sum_{i=1}^{n} x_i + cn = \sum_{i=1}^{n} y_i
+	\end{equation}
+	\newline
+	\[    % <-- start math environment
+	\begin{bmatrix*}[l]
+		\sum_{i=1}^{n} x_i^4 & \sum_{i=1}^{n} x_i^3 & \sum_{i=1}^{n} x_i^2 \\
+		\sum_{i=1}^{n} x_i^3 & \sum_{i=1}^{n} x_i^2 & \sum_{i=1}^{n} x_i \\
+		\sum_{i=1}^{n} x_i^2 & \sum_{i=1}^{n} x_i & n
+	\end{bmatrix*}
+	\begin{bmatrix*}[l]
+		a \\
+		b \\
+		c
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[l]
+		\sum_{i=1}^{n} x_i^2 y_i \\
+		\sum_{i=1}^{n} x_i y_i \\
+		\sum_{i=1}^{n} y_i
+	\end{bmatrix*}
+	(11)
+	\] 
+\end{document}
