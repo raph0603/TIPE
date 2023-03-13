@@ -63,11 +63,7 @@ def determinant_matrice(a):
 		return a[0][0] * a[1][1] - a[0][1] * a[1][0]
 	det = 0
 	for j in range(n):
-		b = [[0 for k in range(n - 1)] for l in range(n - 1)]
-		for i in range(1, n):
-			for k in range(n):
-				if k != j:
-					b[i - 1][k - (k > j)] = a[i][k]
+		b = [[a[l+1][k + (k >= j)] for k in range(n-1)] for l in range(n-1)]
 		det += (-1) ** j * a[0][j] * determinant_matrice(b)
 	return det
 
@@ -112,11 +108,12 @@ def inverse_matrice(a):
 	b = produit_scalaire_matrice(1 / det, b)
 	return b
 
-# matrice = [[5, 7, -3], [4, 2, -1], [9, -4, 6]]
-# repr_matrice(matrice)
+matrice = [[5, 7, -3], [4, 2, -1], [9, -4, 6]]
+repr_matrice(matrice)
 # c = comatrice_matrice(matrice)
 # repr_matrice(c)
-# det = determinant_matrice(matrice)
+det = determinant_matrice(matrice)
+print(det)
 # print(1 / det)
 # repr_matrice(transposee_matrice(comatrice_matrice(matrice)))
 # inv = inverse_matrice(matrice)

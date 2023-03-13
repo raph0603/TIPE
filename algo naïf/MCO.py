@@ -71,7 +71,7 @@ def afficher_graphique_points_reliee(X, Y, degree):
 # afficher_graphique(X, Y, 3)
 
 # test avec des données aléatoires avec aussi du négatif
-for i in range(0, 10):
+for i in range(0, 1):
 	X = [i for i in range(0, 10)]
 	Y = [x ** 3 + 2 * x + 3 + 10 * (5 * random.random() - 1) for x in X]
-	afficher_graphique_points_reliee(X, Y, 8)
+	afficher_graphique_points_reliee(X, Y, 6)
