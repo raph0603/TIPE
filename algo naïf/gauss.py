@@ -50,11 +50,19 @@ def produit_scalaire_matrice(s, a):
 	return a
 
 def inverse_lignes(i, j, M):
-	n = len(M)
-	P = [[1 if (l == k and (l != i or l != j)) or ((l == i or l == j) and (k == n-i-1 or k == n-j-1)) else 0 for k in range(n)] for l in range(n)]
-	return produit_matrice(P, M)
+	"""inverse les lignes i et j de la matrice M"""
+	temp = M[i]
+	M[i] = M[j]
+	M[j] = temp
+	return M
 	
-def combinaison_lineaire_de_ligne(i, j, M, ci,cj):
+def combinaison_lineaire_de_ligne(i, j, ci, cj, M):
+	"""retourne la combinaison lineaire de la ligne i et de la ligne j de la matrice M par les coefficients ci et cj"""
 	n = len(M)
 	P = [[k == l for k in range(n)] for l in range(n)]
-	P[]
+	P[i][i], P[i][j] = ci, cj
+	return produit_matrice(P, M)
+
+exemple = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+repr_matrice(exemple)
+repr_matrice(inverse_lignes(0, 2, exemple))
