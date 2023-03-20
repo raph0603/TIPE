@@ -36,5 +36,11 @@
   "ocaml.sandbox": {
     "kind": "opam",
     "switch": "4.13.1"
-  }
+  },
+  "notebook.output.textLineLimit": 120,
+  "python.testing.pytestArgs": [
+    "algo naïf"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }

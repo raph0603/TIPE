@@ -1,68 +1,133 @@
 # -*- coding: utf-8 -*-
 
-def somme_matrice(a, b):
+def somme_matrice(A, B):
 	"""retourne la somme de deux matrices"""
-	am = len(a)
-	an = len(a[0])
-	bm = len(b)
-	bn = len(b[0])
+	am = len(A)
+	an = len(A[0])
+	bm = len(B)
+	bn = len(B[0])
 	if am != bm or an != bn:
 		return None
-	c = [[0 for j in range(an)] for i in range(am)]
+	C = [[0 for j in range(an)] for i in range(am)]
 	for i in range(am):
 		for j in range(an):
-			c[i][j] = a[i][j] + b[i][j]
-	return c
+			C[i][j] = A[i][j] + B[i][j]
+	return C
 
-def produit_matrice(a, b):
+def produit_matrice(A, B):
 	"""retourne le produit de deux matrices"""
-	am = len(a)
-	an = len(a[0])
-	bm = len(b)
-	bn = len(b[0])
+	am = len(A)
+	an = len(A[0])
+	bm = len(B)
+	bn = len(B[0])
 	if an != bm:
 		print("Les matrices ne sont pas compatibles\n")
 		return None
-	c = [[0 for j in range(bn)] for i in range(am)]
+	C = [[0 for j in range(bn)] for i in range(am)]
 	for i in range(am):
 		for j in range(bn):
 			for k in range(an):
-				c[i][j] += a[i][k] * b[k][j]
-	return c
+				C[i][j] += A[i][k] * B[k][j]
+	return C
 
-def repr_matrice(a):
+def repr_matrice(M):
 	"""affiche une matrice"""
-	n = len(a)
-	m = len(a[0])
+	n = len(M)
+	m = len(M[0])
 	for i in range(n):
 		for j in range(m):
-			print("|", a[i][j],"|", end="")
+			print("|", M[i][j],"|", end="")
 		print("")
 	print("\n")
 
-def produit_scalaire_matrice(s, a):
+def produit_scalaire_matrice(M, s):
 	"""multiplie une matrice par un scalaire"""
-	n = len(a)
-	m = len(a[0])
+	n = len(M)
+	m = len(M[0])
 	for i in range(n):
 		for j in range(m):
-			a[i][j] *= s
-	return a
+			M[i][j] *= s
+	return M
 
-def inverse_lignes(i, j, M):
+def inverse_lignes(M, i, j):
 	"""inverse les lignes i et j de la matrice M"""
 	temp = M[i]
 	M[i] = M[j]
 	M[j] = temp
 	return M
 	
-def combinaison_lineaire_de_ligne(i, j, ci, cj, M):
+def combinaison_lineaire_de_ligne(M, i, j, ci, cj):
 	"""retourne la combinaison lineaire de la ligne i et de la ligne j de la matrice M par les coefficients ci et cj"""
 	n = len(M)
 	P = [[k == l for k in range(n)] for l in range(n)]
 	P[i][i], P[i][j] = ci, cj
 	return produit_matrice(P, M)
 
-exemple = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+def repr_matrice_augmentee(M, I):
+	"""représente la matrice augmentée de M avec I"""
+	nA, nI = len(M), len(I)
+	mA, mI = len(M[0]), len(I[0])
+	if nA != nI or mA != mI:
+		return None
+	for i in range(nA):
+		for j in range(mA):
+			print("|", M[i][j],"|", end="")
+		print("░", end="")
+		for j in range(mI):
+			print("|", I[i][j],"|", end="")
+		print("")
+	print("\n")
+
+def op_matrice_augmentee(func, args, matriceMI):
+	"""réalise les opérations simultanéments sur les matrices M et I"""
+	n = len(matriceMI)
+	if n == 1:
+		return func(*matriceMI, *args)
+	elif n == 2:
+		M = func(matriceMI[0], *args)
+		I = func(matriceMI[1], *args)
+		return M,I
+	
+def elimination_gauss(M,I):
+	def elimination_colonne(i,j,M,I):
+		n = len(M)
+		for k in range(i,n):
+			print("sur la ligne ",k," -> ", M[k][j],": ", end='')
+			if M[k][j] != 0:
+				print("ça marche")
+				M,I = op_matrice_augmentee(inverse_lignes, [i,k], [M,I])
+				print("L",i, "<-> L",k)
+				repr_matrice_augmentee(M,I)
+				break
+			print("on ne peut rien faire")
+		if M[i][j] == 0:
+			print("Pas inversible")
+			return M,I
+		else :
+			# appel de la fonction pour faire apparaitre les 0
+			# TODO fonction pour faire apparaître les 0
+			return M,I
+	for j in range(len(M)-1):
+		M,I= elimination_colonne(j,j,M,I)
+	return M,I
+
+
+		
+
+exemple = [[0, 8, 3], [0, 0, 6], [7, 8, 9]]
+print("repr : exemple")
 repr_matrice(exemple)
-repr_matrice(inverse_lignes(0, 2, exemple))
+I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+print("repr : matrice augmenté ( exemple | I )")
+repr_matrice_augmentee(exemple, I)
+args = [I]
+print("repr : matrice augmenté 2 ( exemple | I )")
+op_matrice_augmentee(repr_matrice_augmentee, args, [exemple])
+args2 = [1,2,1,2]
+matriceMI = [exemple, I]
+res = op_matrice_augmentee(combinaison_lineaire_de_ligne, args2, matriceMI)
+print("repr : matrice augmenté ( res[0] | res[1] )")
+repr_matrice_augmentee(res[0], res[1])
+M,I = elimination_gauss(exemple,I)
+print("repr : matrice augmenté ( M | I )")
+repr_matrice_augmentee(M,I)
