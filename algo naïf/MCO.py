@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import random
 import matrice as m
+import gauss as g
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -32,7 +33,9 @@ def creer_matrices_S1_S2(X, Y, degree):
 
 def solution_MCO(X, Y, degree):
 	S1, S2 = creer_matrices_S1_S2(X, Y, degree)
-	return m.produit_matrice(m.inverse_matrice(S1), S2)
+	S1_1 = g.inverse_matrice(S1)
+	g.repr_matrice(S1_1)
+	return m.produit_matrice(g.inverse_matrice(S1), S2)
 
 def afficher_graphique(X, Y, degree):
 	S = solution_MCO(X, Y, degree)
@@ -74,4 +77,4 @@ def afficher_graphique_points_reliee(X, Y, degree):
 for i in range(0, 1):
 	X = [i for i in range(0, 10)]
 	Y = [x ** 3 + 2 * x + 3 + 10 * (5 * random.random() - 1) for x in X]
-	afficher_graphique_points_reliee(X, Y, 6)
+	afficher_graphique_points_reliee(X, Y, 2)

@@ -143,15 +143,24 @@ def elimination_gauss(M,I):
 		M,I= un_colonne(j,M,I)
 	return M,I
 
-
+def inverse_matrice(M):
+	print("repr : M")
+	repr_matrice(M)
+	I = [[1 if i==j else 0 for i in range(len(M))] for j in range(len(M))]
+	print("repr : matrice augmenté ( M | I )")
+	repr_matrice_augmentee(M, I)
+	M,I = elimination_gauss(M,I)
+	print("repr : matrice augmenté ( M | I )")
+	repr_matrice_augmentee(M,I)
+	return I
 		
 
-exemple = [[1,2, 3], [4, 5, 6], [7, 8, 10]]
-print("repr : exemple")
-repr_matrice(exemple)
-I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
-print("repr : matrice augmenté ( exemple | I )")
-repr_matrice_augmentee(exemple, I)
+# exemple = [[1,2, 3], [4, 5, 6], [7, 8, 10]]
+# print("repr : M")
+# repr_matrice(exemple)
+# I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+# print("repr : matrice augmenté ( exemple | I )")
+# repr_matrice_augmentee(exemple, I)
 # args = [I]
 # print("repr : matrice augmenté 2 ( exemple | I )")
 # op_matrice_augmentee(repr_matrice_augmentee, args, [exemple])
@@ -160,6 +169,6 @@ repr_matrice_augmentee(exemple, I)
 # res = op_matrice_augmentee(combinaison_lineaire_de_ligne, args2, matriceMI)
 # print("repr : matrice augmenté ( res[0] | res[1] )")
 # repr_matrice_augmentee(res[0], res[1])
-M,I = elimination_gauss(exemple,I)
-print("repr : matrice augmenté ( M | I )")
-repr_matrice_augmentee(M,I)
+# M,I = elimination_gauss(exemple,I)
+# print("repr : matrice augmenté ( M | I )")
+# repr_matrice_augmentee(M,I)
