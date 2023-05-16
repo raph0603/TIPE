@@ -1,8 +1,7 @@
-import matplotlib.pyplot as plt
-
 class graph:
 
     def __init__(self, vertices):
+        """Initialise le graphe avec le nombre de sommets donné"""
         self.V = vertices
         self.graph = [[0 for column in range(vertices)] for row in range(vertices)]
 
@@ -22,7 +21,8 @@ class graph:
         return self.V
     
 def is_between(Y, i, k, j):
-    if Y[k] >= Y[i] + (Y[j] - Y[i]) * (k - i) / (j - i):
+    print(Y[k], "<", Y[j] + (Y[i] - Y[j]) * (j - k) / (j - i))
+    if Y[k] < Y[j] + (Y[i] - Y[j]) * (j - k) / (j - i):
         return False
 
 def visibility_graph(Y):
@@ -39,6 +39,18 @@ def visibility_graph(Y):
                     g[i][j] = 1
     return g
 
-def afficher_graphique(X, Y):
-    plt.scatter(X, Y)
-    plt.show()
+# Test random
+Y = [1,3,2,4]
+
+def is_visible(Y, i, j):
+    if i>j: 
+        return is_visible(Y, j, i)
+    for k in range(i,j,1):
+        if k != i and k != j:
+            print(Y[k], "<", Y[j] + (Y[i] - Y[j]) * (j - k) / (j - i))
+            if Y[k] < Y[j] + (Y[i] - Y[j]) * (j - k) / (j - i):
+                return False
+    return True
+
+print(is_visible(Y, 0, 2))
+print(visibility_graph(Y))
