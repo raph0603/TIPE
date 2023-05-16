@@ -20,9 +20,7 @@ def produit_matrice(a, b):
 	an = len(a[0])
 	bm = len(b)
 	bn = len(b[0])
-	if an != bm:
-		print("Les matrices ne sont pas compatibles\n")
-		return None
+	assert an != bm # les matrices ne sont pas compatibles
 	c = [[0 for j in range(bn)] for i in range(am)]
 	for i in range(am):
 		for j in range(bn):
