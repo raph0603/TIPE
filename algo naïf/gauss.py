@@ -144,14 +144,14 @@ def elimination_gauss(M,I):
 	return M,I
 
 def inverse_matrice(M):
-	print("repr : M")
-	repr_matrice(M)
+	# print("repr : M")
+	# repr_matrice(M)
 	I = [[1 if i==j else 0 for i in range(len(M))] for j in range(len(M))]
-	print("repr : matrice augmenté ( M | I )")
-	repr_matrice_augmentee(M, I)
+	# print("repr : matrice augmenté ( M | I )")
+	# repr_matrice_augmentee(M, I)
 	M,I = elimination_gauss(M,I)
-	print("repr : matrice augmenté ( M | I )")
-	repr_matrice_augmentee(M,I)
+	# print("repr : matrice augmenté ( M | I )")
+	# repr_matrice_augmentee(M,I)
 	return I
 		
 

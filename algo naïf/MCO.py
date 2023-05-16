@@ -4,6 +4,7 @@ import matrice as m
 import gauss as g
 import matplotlib.pyplot as plt
 import numpy as np
+from tqdm import tqdm
 
 a = [[1, 2, 3], [4, 5, 6], [7, 8, 10]]
 
@@ -34,23 +35,76 @@ def creer_matrices_S1_S2(X, Y, degree):
 def solution_MCO(X, Y, degree):
 	S1, S2 = creer_matrices_S1_S2(X, Y, degree)
 	S1_1 = g.inverse_matrice(S1)
-	g.repr_matrice(S1_1)
+	# g.repr_matrice(S1_1)
 	return m.produit_matrice(g.inverse_matrice(S1), S2)
+
+def R2(X,Y):
+	x_ = moyenne(X)
+	y_ = moyenne(Y)
+	s1 = 0
+	s2 = 0
+	s3 = 0
+	for i in range(len(X)):
+		s1+= (X[i]- x_)*(Y[i]-y_)
+		s2+= (X[i]- x_)**2
+		s3+= (Y[i]- y_)**2
+	# print(s1,s2,s3)
+	return (s1**2)/(s2*s3)
+
+# def search_better_degree(X,Y,Calculated,degree,max):
+# 	if Calculated == []: 
+# 		S = solution_MCO(X, Y, degree)
+# 		y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in X]
+# 		Calculated[degree-1] = R2(Y,y)
+# 		print(Calculated[degree-1])
+# 	else:
+# 		S = solution_MCO(X, Y, degree)
+# 		y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in X]
+# 		Calculated[degree-1] = R2(Y,y)
+# 		print(Calculated[degree-1])
+# 		moy = 5 + 
+
+def R2_evo(X,Y, max_value):
+	r2list = [0 for i in range(max_value)]
+	for i in tqdm(range(max_value)):
+		# print("itération :",i)
+		S = solution_MCO(X, Y, i)
+		y = [sum([S[i][0] * x ** (i-j) for j in range(i+1)]) for x in X]
+		# print("y:",y)
+		r2list[i] = R2(Y,y)
+	print("r2list:",*r2list)
+	plt.plot(r2list, 'r',color='red')
+	plt.show()
+	m = 0
+	ind = 0
+	for i in range(len(r2list)):
+		if r2list[i]> m :
+			m = r2list[i]
+			ind = i
+	print("ind : ", ind)
+	print("R²(",ind,") :", r2list[ind])
+	print("R²(",ind+1,") :", r2list[ind+1])
+	afficher_graphique_points_reliee(X,Y,ind)
+	afficher_graphique_points_reliee(X,Y,ind+1)
+	
+
+	
 
 def afficher_graphique(X, Y, degree):
 	S = solution_MCO(X, Y, degree)
 	x = [i / 10 for i in range(0, 100)]
 	y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in x]
-	plt.scatter(X, Y)
+	plt.scatter(x, y)
 	plt.plot(x, y, 'r',color='red')
 	plt.show()
 
 def afficher_graphique_points_reliee(X, Y, degree):
 	S = solution_MCO(X, Y, degree)
-	x = [i / 10 for i in range(0, 100)]
+	x = [i / 10 for i in range(0, len(X)*10)]
 	y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in x]
 	plt.scatter(X, Y)
 	plt.plot(x, y,'r')
+	plt.suptitle('R²: ' + str(R2(X, Y)))
 	for abscisse, ordonnee in zip(X, Y):
 		plt.plot([abscisse, abscisse], [ordonnee, sum([S[i][0] * abscisse ** (degree - i) for i in range(degree + 1)])], color ='blue', linewidth=1.5, linestyle="--")
 	plt.show()
@@ -77,4 +131,6 @@ def afficher_graphique_points_reliee(X, Y, degree):
 for i in range(0, 1):
 	X = [i for i in range(0, 10)]
 	Y = [x ** 3 + 2 * x + 3 + 10 * (5 * random.random() - 1) for x in X]
-	afficher_graphique_points_reliee(X, Y, 2)
+	# afficher_graphique_points_reliee(X, Y, 2)
+	M = [78,64,48,54,41,3,87,54,44,3]
+	R2_evo(X,M, len(M)*3)	
