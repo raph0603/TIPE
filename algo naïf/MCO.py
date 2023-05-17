@@ -80,7 +80,7 @@ def afficher_graphique_points_reliee(X, Y, degree):
 	y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in x]
 	plt.scatter(X, Y)
 	plt.plot(x, y,'r')
-	plt.suptitle('R²: ' + str(R2(X, Y)))
+	# plt.suptitle('R²: ' + str(R2(X, Y)))
 	for abscisse, ordonnee in zip(X, Y):
 		plt.plot([abscisse, abscisse], [ordonnee, sum([S[i][0] * abscisse ** (degree - i) for i in range(degree + 1)])], color ='blue', linewidth=1.5, linestyle="--")
 	plt.show()
@@ -104,7 +104,8 @@ def afficher_graphique_points_reliee(X, Y, degree):
 # afficher_graphique(X, Y, 3)
 
 # test avec des données aléatoires avec aussi du négatif
-for i in range(0, 1):
-	X = [i for i in range(0, 10)]
-	Y = [x ** 2 + 2 * x + 3 + 10 * (5 * random.random() - 1) for x in X]
-	afficher_graphique_points_reliee(X, Y, 2)	
+r = 0.4
+for i in range(0,1):
+	X = [j for j in range(0, 10)]
+	Y = [x**4 +x ** 2 + 2 * x + 3 + 15 * (15 * r - 1) for x in X]
+	afficher_graphique_points_reliee(X, Y, 10)	

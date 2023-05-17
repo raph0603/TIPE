@@ -183,7 +183,7 @@ def predict(Y, N):
     
 
 # Test random
-Y = [2,5,4,8]
+Y = [10,5,4,15,3,8]
 
 
 print(is_visible(Y, 0, 2))
