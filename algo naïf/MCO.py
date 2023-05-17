@@ -64,30 +64,6 @@ def R2(X,Y):
 # 		print(Calculated[degree-1])
 # 		moy = 5 + 
 
-def R2_evo(X,Y, max_value):
-	r2list = [0 for i in range(max_value)]
-	for i in tqdm(range(max_value)):
-		# print("itération :",i)
-		S = solution_MCO(X, Y, i)
-		y = [sum([S[i][0] * x ** (i-j) for j in range(i+1)]) for x in X]
-		# print("y:",y)
-		r2list[i] = R2(Y,y)
-	print("r2list:",*r2list)
-	plt.plot(r2list, 'r',color='red')
-	plt.show()
-	m = 0
-	ind = 0
-	for i in range(len(r2list)):
-		if r2list[i]> m :
-			m = r2list[i]
-			ind = i
-	print("ind : ", ind)
-	print("R²(",ind,") :", r2list[ind])
-	print("R²(",ind+1,") :", r2list[ind+1])
-	afficher_graphique_points_reliee(X,Y,ind)
-	afficher_graphique_points_reliee(X,Y,ind+1)
-	
-
 	
 
 def afficher_graphique(X, Y, degree):
@@ -130,7 +106,5 @@ def afficher_graphique_points_reliee(X, Y, degree):
 # test avec des données aléatoires avec aussi du négatif
 for i in range(0, 1):
 	X = [i for i in range(0, 10)]
-	Y = [x ** 3 + 2 * x + 3 + 10 * (5 * random.random() - 1) for x in X]
-	# afficher_graphique_points_reliee(X, Y, 2)
-	M = [78,64,48,54,41,3,87,54,44,3]
-	R2_evo(X,M, len(M)*3)	
+	Y = [x ** 2 + 2 * x + 3 + 10 * (5 * random.random() - 1) for x in X]
+	afficher_graphique_points_reliee(X, Y, 2)	

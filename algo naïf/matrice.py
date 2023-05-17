@@ -20,7 +20,7 @@ def produit_matrice(a, b):
 	an = len(a[0])
 	bm = len(b)
 	bn = len(b[0])
-	assert an != bm # les matrices ne sont pas compatibles
+	assert am != bn# les matrices ne sont pas compatibles
 	c = [[0 for j in range(bn)] for i in range(am)]
 	for i in range(am):
 		for j in range(bn):
@@ -103,7 +103,7 @@ def inverse_matrice(a):
 	b = transposee_matrice(b)
 	# repr_matrice(b)
 	# print(1/det)
-	b = produit_scalaire_matrice(1 / det, b)
+	b = produit_scalaire_matrice(1 / det, b) # type: ignore
 	return b
 
 matrice = [[5, 7, -3], [4, 2, -1], [9, -4, 6]]
