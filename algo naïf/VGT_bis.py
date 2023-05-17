@@ -110,6 +110,9 @@ def Sij(g : graph, i, j , t):
 def Sij_better(g : graph, i, j , t):
     return sum([Sij(g, i, j, l) for l in range(t)])
 
+def distance(i,j):
+    return abs(i-j)
+
 def y_(g : graph, Y):
     S = [Sij(g, i, len(g)-1, abs(i - len(g)-1)) for i in range(len(g)-1)]
     print("S:", S)
@@ -120,7 +123,10 @@ def y_(g : graph, Y):
             ind = i
             max = S[i]
     ytp1 = ((Y[-1]-Y[ind])/(len(g)-1-ind)) + Y[-1]
-    return ytp1
+    w1 = 1/ distance(ind, len(g))
+    w2 = distance(ind, len(g)-1) / distance(ind, len(g))
+    yntp1 = w1 * Y[-1] + w2 * ytp1
+    return yntp1
 
 def predict(Y, T):
     PTS = [y for y in Y]
@@ -142,12 +148,25 @@ def plot_visibility_graph_pred(Y,graph, pred):
     plt.plot(range(len(Y), len(Y)+len(pred)), pred , 'r',color='green', linestyle='dashed')
     plt.show()
 
+def pred_seq(Y, nb_nodes):
+    res = []
+    for i in range(len(Y)-nb_nodes):
+        g = visibility_graph(Y[i:i+nb_nodes])
+        res.append(y_(g, Y[i:i+nb_nodes]))
+    return res
+
+def plot_visibility_graph_pred_seq(Y,nb_nodes, pred):
+    plt.plot(range(nb_nodes,len(Y)), pred , 'r',color='red')
+    plt.plot(range(len(Y)), Y , 'r',color='blue')
+    plt.show()
+
 #-----------------TEST-----------------#
 
-Y = [1,5,4,6,7,2,3,9]
+# Y = [1,5,4,6,7,2,3,9]
 
-g = visibility_graph(Y)
-print(Sij(g, 0, 1, 1))
-plot_visibility_graph(Y,g.graph)
-print(y_(g, Y))
-plot_visibility_graph_pred(Time_series, visibility_graph(Time_series).graph, predict(Time_series, 1))
+# g = visibility_graph(Y)
+# print(Sij(g, 0, 1, 1))
+# plot_visibility_graph(Y,g.graph)
+# print(y_(g, Y))
+plot_visibility_graph_pred(Time_series[330:], visibility_graph(Time_series[330:]).graph, predict(Time_series[330:], 1))
+plot_visibility_graph_pred_seq(Time_series, 30, pred_seq(Time_series, 30))

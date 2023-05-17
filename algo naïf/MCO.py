@@ -36,7 +36,7 @@ def solution_MCO(X, Y, degree):
 	S1, S2 = creer_matrices_S1_S2(X, Y, degree)
 	S1_1 = g.inverse_matrice(S1)
 	# g.repr_matrice(S1_1)
-	return m.produit_matrice(g.inverse_matrice(S1), S2)
+	return m.produit_matrice(S1_1, S2)
 
 def R2(X,Y):
 	x_ = moyenne(X)
