@@ -22,7 +22,7 @@ class graph:
         print("i :", i, "j :", j, "value :", value)
 
     def __len__(self):
-        return self.V
+        return self.V 
     
 def lecture(nom, separateur=","):
     """Lecture d'un fichier csv et renvoie une liste de dictionnaires"""
@@ -78,8 +78,9 @@ def plot_visibility_graph_pred(Y,graph, pred):
             if graph[i][j] == 1:
                 plt.plot([i, j], [Y[i], Y[j]], 'r',color='red')
     plt.stem(range(len(Y)), Y)
-    plt.stem(len(Y), pred, "g")
-    plt.plot([len(Y)-1, len(Y)], [Y[len(Y)-1], pred], 'r',color='green', linestyle='dashed')
+    plt.stem(range(len(Y), len(Y)+len(pred)), pred, "g")
+    plt.plot([len(Y)-1, len(Y)], [Y[len(Y)-1], pred[0]], 'r',color='green', linestyle='dashed')
+    plt.plot(range(len(Y), len(Y)+len(pred)), pred , 'r',color='green', linestyle='dashed')
     plt.show()
 
 def vg(graph):
@@ -136,10 +137,12 @@ def nb_E_2(g):
 
 def S_LRW_xy(g, Pt, x, y, t):
     print("Pt :", Pt)
+    t = node_dist(x, y)
     pi_xyt = Pi_x(Pt, x, t)
     pi_yxt = Pi_x(Pt, y, t)
     print("pi_xyt :", pi_xyt)
     print("pi_yxt :", pi_yxt)
+    print( (k_x(g,x)/nb_E_2(g)) * pi_xyt[y] + (k_x(g,y)/nb_E_2(g)) * pi_yxt[x])
     return (k_x(g,x)/nb_E_2(g)) * pi_xyt[y] + (k_x(g,y)/nb_E_2(g)) * pi_yxt[x]
 
 def S_SRW_xy(g, x, y, t):
@@ -180,28 +183,67 @@ def predict(Y, N):
         pred.append(yn__1)
         PTS.append(yn__1)
     return pred
-    
+
+def y_circ(Y, i):
+    return Y[-1] + (((Y[-1]-Y[i])/(len(Y)-1-i)))
+
+def forecast_method(Y):
+    g = visibility_graph(Y).graph
+    P = P_matrix(g)
+    F = []
+    for i in range(len(Y)-1):
+        F.append(y_circ(Y, i))
+    S_SRW = []
+    t = 0
+    while True:
+        pi = [[] for i in range(len(Y))]
+        for i in range(len(Y)):
+            if t == 0 :
+                # print("t :", t)
+                # print("i :", i)
+                pi[i] = [1 if i == j  else 0 for j in range(len(Y))]
+                # print(pi[i])
+            else:
+                # print("i :", i)
+                # print("t :", t)
+                # print(pi)
+                # print(len(pi[i]), len(P))
+                pi[i] = produit_mat_vect(mat.transposee_matrice(P), pi[i])
+            print("i :", i)
+            print("pi :", pi)
+        # print("P :", P)
+        S_LRW = [S_LRW_xy(g, mat.transposee_matrice(P), i, len(Y)-1, t) for i in range(len(Y)-1)]
+        # print("S_LRW :", S_LRW)
+        S_LRW_bis = [i for i in S_LRW]
+        S_SRW += S_LRW
+        if t !=1 and S_LRW_bis == S_LRW:
+            break
+        t += 1
+    # print("S_SRW :", S_SRW)
+    S = [i for i in S_SRW]
+    # print("S :", S)
+    S_sum = sum(S)
+    # print("S_sum :", S_sum)
+    w = [i/S_sum for i in S]
+    y_circonf = sum([w[i]*F[i] for i in range(len(F))])
+    return y_circonf
+
 
 # Test random
-Y = [2,5,4,8]
 
+Y = [1,4,1,4,1,4]
 
-print(is_visible(Y, 0, 2))
 g = visibility_graph(Y).graph
-print(g)
-plot_visibility_graph(Y,g)
-graphn = plot_igraph(Y,g)
-graphn.write_svg("test.svg")
 
-S = S_SRW_xy(g, 1, 3, 5)
 
 S_SRW = [S_SRW_xy(g,i,len(Y)-1, node_dist(i,len(Y)-1)) for i in range(len(Y)-1)]
 
 yn__1 = y_n1(S_SRW, Y)
-
-plot_visibility_graph_pred(Y,g, yn__1)
-
+print("forecast method :",forecast_method(Y))
+fm = forecast_method(Y)
 pred = predict(Y, 5)
+plot_visibility_graph_pred(Y,g, pred)
+
 
 # Test on Time_series
 
