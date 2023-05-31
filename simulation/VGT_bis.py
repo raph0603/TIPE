@@ -162,14 +162,17 @@ def plot_visibility_graph_pred_seq(Y,nb_nodes, pred):
 
 #-----------------TEST-----------------#
 
-# Y = [1,5,4,6,7,2,3,9]
+Y = [1,5,4,6,7,2,3,9]
 
-# g = visibility_graph(Y)
-# print(Sij(g, 0, 1, 1))
-# plot_visibility_graph(Y,g.graph)
-# print(y_(g, Y))
-plot_visibility_graph_pred(Time_series[60:120], visibility_graph(Time_series[60:120]).graph, predict(Time_series[60:120], 1))
-plot_visibility_graph_pred_seq(Time_series[60:120], 30, pred_seq(Time_series[60:120], 30))
-pred_30 = pred_seq(Time_series[60:120], 30)
-plot_visibility_graph_pred(Time_series[330:], visibility_graph(Time_series[330:]).graph, predict(Time_series[330:], 1))
-plot_visibility_graph_pred_seq(Time_series, 30, pred_seq(Time_series, 30))
+g = visibility_graph(Y)
+print(Sij(g, 0, 1, 1))
+plot_visibility_graph(Y,g.graph)
+print(y_(g, Y))
+plot_visibility_graph_pred(Y,g.graph,predict(Y,1))
+# plot_visibility_graph_pred(Time_series[60:120], visibility_graph(Time_series[60:120]).graph, predict(Time_series[60:120], 1))
+# plot_visibility_graph_pred_seq(Time_series[60:120], 30, pred_seq(Time_series[60:120], 30))
+# pred_30 = pred_seq(Time_series[60:120], 30)
+# plot_visibility_graph_pred(Time_series[330:], visibility_graph(Time_series[330:]).graph, predict(Time_series[330:], 1))
+# plot_visibility_graph_pred_seq(Time_series, 30, pred_seq(Time_series, 30))
+# plot_visibility_graph_pred(Time_series[100:115], visibility_graph(Time_series[100:115]).graph, predict(Time_series[100:115], 1))
+# plot_visibility_graph_pred_seq(Time_series[100:115], 10, pred_seq(Time_series[100:115], 10))

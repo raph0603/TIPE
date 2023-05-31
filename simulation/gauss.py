@@ -120,18 +120,19 @@ def elimination_gauss(M,I):
 					# print("repr : matrice augmenté ( M | I )")
 					# repr_matrice_augmentee(M,I)
 			return M,I
-	def elimination_colonne_sup(i,j,M,I):
+	def elimination_colonne_sup(i,j,M: list[list[int]],I):
 		# print("je suis là")
 		for k in range(0, i):
 			# print("i:",i, "k:",k)
-			if M[k][j] != 0:
+			if M[k][j] != 0: # type: ignore
 				M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [k,i, 1, -(M[k][i]/M[i][j])], [M,I]) # type: ignore
 				# print("repr : matrice augmenté ( M | I )")
 				# repr_matrice_augmentee(M,I)
 		return M,I
+	
 	def un_colonne(i,M,I):
 		if M[j][j] != 1:
-			M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [j,j, 1/M[j][j], 0], [M,I]) # type: ignore
+			M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [j,j, 1/M[j][j], 0], [M,I]) 
 			# print("repr : matrice augmenté ( M | I )")
 			# repr_matrice_augmentee(M,I)
 		return M,I
