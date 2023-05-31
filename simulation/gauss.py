@@ -104,7 +104,7 @@ def elimination_gauss(M,I):
 			# print("sur la ligne ",k," -> ", M[k][j],": ", end='')
 			if M[k][j] != 0:
 				# print("ça marche")
-				M,I = op_matrice_augmentee(inverse_lignes, [i,k], [M,I])
+				M,I = op_matrice_augmentee(inverse_lignes, [i,k], [M,I]) # type: ignore
 				# print("L",i, "<-> L",k)
 				# repr_matrice_augmentee(M,I)
 				break
@@ -116,7 +116,7 @@ def elimination_gauss(M,I):
 			for k in range(i+1, n):
 				# print("i:",i, "k:",k)
 				if M[k][j] != 0:
-					M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [k,i, 1, -(M[k][i]/M[i][j])], [M,I])
+					M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [k,i, 1, -(M[k][i]/M[i][j])], [M,I]) # type: ignore
 					# print("repr : matrice augmenté ( M | I )")
 					# repr_matrice_augmentee(M,I)
 			return M,I
@@ -125,13 +125,13 @@ def elimination_gauss(M,I):
 		for k in range(0, i):
 			# print("i:",i, "k:",k)
 			if M[k][j] != 0:
-				M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [k,i, 1, -(M[k][i]/M[i][j])], [M,I])
+				M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [k,i, 1, -(M[k][i]/M[i][j])], [M,I]) # type: ignore
 				# print("repr : matrice augmenté ( M | I )")
 				# repr_matrice_augmentee(M,I)
 		return M,I
 	def un_colonne(i,M,I):
 		if M[j][j] != 1:
-			M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [j,j, 1/M[j][j], 0], [M,I])
+			M,I = op_matrice_augmentee(combinaison_lineaire_de_ligne, [j,j, 1/M[j][j], 0], [M,I]) # type: ignore
 			# print("repr : matrice augmenté ( M | I )")
 			# repr_matrice_augmentee(M,I)
 		return M,I

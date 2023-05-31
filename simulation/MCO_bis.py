@@ -32,7 +32,7 @@ Time_series = [int(item["Consommation"]) for item in dico]
 def moyenne(tableau):
 	return sum(tableau) / len(tableau)
 
-def creer_matrices_S1_S2(X, Y, degree):
+def creer_matrices_S1_S2(X: list[int], Y: list[int], degree):
 	# X = Les abscisses
 	# Y = Les ordonnées
 	S1 = [[0 for i in range(degree + 1)] for j in range(degree + 1)]
@@ -82,7 +82,7 @@ def prediction(X,Y,degree,nb_nodes):
 	return res
 	
 
-def afficher_graphique_points_reliee(X, Y, degree):
+def afficher_graphique_points_reliee(X: list[int], Y: list[int], degree):
 	S = solution_MCO(X, Y, degree)
 	x = [i / 10 for i in range(0, len(X)*10)]
 	y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in x]
