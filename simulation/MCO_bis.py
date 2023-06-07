@@ -86,20 +86,41 @@ def afficher_graphique_points_reliee(X: list[int], Y: list[int], degree):
 	S = solution_MCO(X, Y, degree)
 	x = [i / 10 for i in range(0, len(X)*10)]
 	y = [sum([S[i][0] * x ** (degree - i) for i in range(degree + 1)]) for x in x]
-	plt.scatter(X, Y)
+	plt.plot(X, Y)
 	# plt.suptitle('R²: ' + str(R2(X, Y)))
-	for abscisse, ordonnee in zip(X, Y):
-		plt.plot([abscisse, abscisse], [ordonnee, sum([S[i][0] * abscisse ** (degree - i) for i in range(degree + 1)])], color ='blue', linewidth=1.5, linestyle="--")
+	# for abscisse, ordonnee in zip(X, Y):
+	# 	plt.plot([abscisse, abscisse], [ordonnee, sum([S[i][0] * abscisse ** (degree - i) for i in range(degree + 1)])], color ='blue', linewidth=1.5, linestyle="--")
 	plt.plot(x, y,'r')
+	print("correlation:", correlation(Y,y))
+	plt.legend(["Consommation d'électricité en MW au cours du temps", "Prédiction"])
 	plt.show()
 
 def afficher_graphique_pred(X, Y, degree, nb_nodes):
 	plt.plot(X, Y, 'r')
 	plt.plot(X[nb_nodes:], prediction(X, Y, degree, nb_nodes), 'b')
+	plt.legend(["Consommation d'électricité en MW au cours du temps", "Prédiction"])
+	plt.xlabel("Temps (en jours)")
+	plt.ylabel("Consommation d'électricité (en MW)")
+	print("correlation :", correlation(Y[nb_nodes:], prediction(X, Y, degree, nb_nodes)))
 	plt.show()
+
+def covariance(X, Y):
+	n = len(X)
+	x_ = 1/n * sum(X)
+	m = len(Y)
+	y_ = 1/m * sum(Y)
+	return 1/n * sum([((X[i] - x_)**2)*(Y[i]-y_)  for i in range(len(X))])
+
+def ecart_type(X):
+	n = len(X)
+	x_ = 1/n * sum(X)
+	return (1/n * sum([(X[i] - x_)**2 for i in range(len(X))]))**0.5
+
+def correlation(X, Y):
+	return covariance(X, Y)/(ecart_type(X)*ecart_type(Y))
 
 #-----------------MAIN-----------------#
 	
-X = [i for i in range(0, len(Time_series[60:90]))]
-afficher_graphique_pred(X, Time_series[60:90], 30, 30)
-afficher_graphique_points_reliee(X, Time_series[60:90], 8)
+X = [i for i in range(0, len(Time_series))]
+afficher_graphique_pred(X, Time_series, 2, 15)
+# afficher_graphique_points_reliee(X, Time_series, 10)
