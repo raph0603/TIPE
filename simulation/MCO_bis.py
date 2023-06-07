@@ -59,7 +59,7 @@ def solution_MCO(X, Y, degree):
 	g.repr_matrice(S2)
 	return m.produit_matrice(S1_1, S2)
 
-def R2(X,Y):
+# def R2(X,Y):
 	x_ = moyenne(X)
 	y_ = moyenne(Y)
 	s1 = 0
